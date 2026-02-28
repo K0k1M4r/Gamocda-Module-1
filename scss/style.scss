@@ -1,4 +1,25 @@
 @use './reset';
+@use './sections/header-section';
+@use './sections/sidebar-section';
+@use './sections/home-section';
+@use './sections/search-section';
+@use './sections/library-section';
+@use './sections/playlist-section';
+@use './sections/song-section';
+@use './sections/album-section';
+@use './sections/artist-section';
+@use './sections/about-artist-section';
+@use './sections/grid-albums-section';
+@use './sections/list-albums-section';
+@use './sections/podcast-section';
+@use './sections/episode-section';
+@use './sections/discover-section';
+
+
+
+
+
+
 
 p {
     color: aliceblue;
