@@ -1,3 +1,33 @@
 @use '../abstract/mixins' as *;
 @use '../universal components/components' as *;
 @use '../abstract/responsive' as *;
+@use '../abstract/variables' as *; 
+
+
+
+// 
+
+
+// card list style
+.home-mix-card-list {
+    display: flex;
+}
+
+// 
+@each $card-name, $color in $home-card-colors{
+
+
+
+    @include desktop {
+        .home-mix-card-container.#{$card-name} {
+        @include home-mix-card-content($theme-color:$color);
+        }
+    }
+    
+}
+
+
+// card container style
+// .card-container-#{$card-name} {
+//     @include card-content-home-section($theme-color:#CE6E9A)
+// }
