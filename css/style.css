@@ -49,8 +49,42 @@ table {
   border-spacing: 0;
 }
 
-.home-mix-card-list {
+html {
+  font-size: 62.5%;
+}
+
+.music-audio-filter {
   display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.6rem;
+}
+.music-audio-filter button:nth-child(1) {
+  background-color: #E0E0E0;
+  color: #111111;
+}
+.music-audio-filter button {
+  color: #E0E0E0;
+  background-color: rgba(32, 32, 32, 0.5019607843);
+  border: none;
+  font-size: 1.4rem;
+  font-weight: 700;
+  padding: 0.8rem 1.5rem;
+  border-radius: 0.8rem;
+}
+
+.card-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card-list-header h2 {
+  color: #E0E0E0;
+  font-size: 2rem;
+  font-weight: 700;
+}
+.card-list-header div {
+  display: flex;
+  align-items: center;
 }
 
 @media (min-width: 500px) {
@@ -60,6 +94,7 @@ table {
     align-items: center;
     max-width: 17rem;
     padding-top: 1rem;
+    padding-bottom: 0.8rem;
   }
   .home-mix-card-container.avrillpink .card-text {
     display: flex;
@@ -76,6 +111,8 @@ table {
     justify-content: space-between;
     min-width: 100%;
     font-size: 1.4rem;
+    padding-top: 0.605rem;
+    padding-bottom: 0.8rem;
   }
   .home-mix-card-container.avrillpink .card-text-header h3 {
     font-weight: 500;
@@ -125,6 +162,7 @@ table {
     align-items: center;
     max-width: 17rem;
     padding-top: 1rem;
+    padding-bottom: 0.8rem;
   }
   .home-mix-card-container.descoverpink .card-text {
     display: flex;
@@ -141,6 +179,8 @@ table {
     justify-content: space-between;
     min-width: 100%;
     font-size: 1.4rem;
+    padding-top: 0.605rem;
+    padding-bottom: 0.8rem;
   }
   .home-mix-card-container.descoverpink .card-text-header h3 {
     font-weight: 500;
@@ -190,6 +230,7 @@ table {
     align-items: center;
     max-width: 17rem;
     padding-top: 1rem;
+    padding-bottom: 0.8rem;
   }
   .home-mix-card-container.linkinparkgreen .card-text {
     display: flex;
@@ -206,6 +247,8 @@ table {
     justify-content: space-between;
     min-width: 100%;
     font-size: 1.4rem;
+    padding-top: 0.605rem;
+    padding-bottom: 0.8rem;
   }
   .home-mix-card-container.linkinparkgreen .card-text-header h3 {
     font-weight: 500;
@@ -255,6 +298,7 @@ table {
     align-items: center;
     max-width: 17rem;
     padding-top: 1rem;
+    padding-bottom: 0.8rem;
   }
   .home-mix-card-container.strokesgreen .card-text {
     display: flex;
@@ -271,6 +315,8 @@ table {
     justify-content: space-between;
     min-width: 100%;
     font-size: 1.4rem;
+    padding-top: 0.605rem;
+    padding-bottom: 0.8rem;
   }
   .home-mix-card-container.strokesgreen .card-text-header h3 {
     font-weight: 500;
@@ -320,6 +366,7 @@ table {
     align-items: center;
     max-width: 17rem;
     padding-top: 1rem;
+    padding-bottom: 0.8rem;
   }
   .home-mix-card-container.chuckberrypink .card-text {
     display: flex;
@@ -336,6 +383,8 @@ table {
     justify-content: space-between;
     min-width: 100%;
     font-size: 1.4rem;
+    padding-top: 0.605rem;
+    padding-bottom: 0.8rem;
   }
   .home-mix-card-container.chuckberrypink .card-text-header h3 {
     font-weight: 500;
@@ -385,6 +434,7 @@ table {
     align-items: center;
     max-width: 17rem;
     padding-top: 1rem;
+    padding-bottom: 0.8rem;
   }
   .home-mix-card-container.sinatrablue .card-text {
     display: flex;
@@ -401,6 +451,8 @@ table {
     justify-content: space-between;
     min-width: 100%;
     font-size: 1.4rem;
+    padding-top: 0.605rem;
+    padding-bottom: 0.8rem;
   }
   .home-mix-card-container.sinatrablue .card-text-header h3 {
     font-weight: 500;
@@ -450,6 +502,7 @@ table {
     align-items: center;
     max-width: 17rem;
     padding-top: 1rem;
+    padding-bottom: 0.8rem;
   }
   .home-mix-card-container.nirvanayellow .card-text {
     display: flex;
@@ -466,6 +519,8 @@ table {
     justify-content: space-between;
     min-width: 100%;
     font-size: 1.4rem;
+    padding-top: 0.605rem;
+    padding-bottom: 0.8rem;
   }
   .home-mix-card-container.nirvanayellow .card-text-header h3 {
     font-weight: 500;
@@ -515,6 +570,7 @@ table {
     align-items: center;
     max-width: 17rem;
     padding-top: 1rem;
+    padding-bottom: 0.8rem;
   }
   .home-mix-card-container.follautpink .card-text {
     display: flex;
@@ -531,6 +587,8 @@ table {
     justify-content: space-between;
     min-width: 100%;
     font-size: 1.4rem;
+    padding-top: 0.605rem;
+    padding-bottom: 0.8rem;
   }
   .home-mix-card-container.follautpink .card-text-header h3 {
     font-weight: 500;
@@ -580,6 +638,7 @@ table {
     align-items: center;
     max-width: 17rem;
     padding-top: 1rem;
+    padding-bottom: 0.8rem;
   }
   .home-mix-card-container.redhotchillieyellow .card-text {
     display: flex;
@@ -596,6 +655,8 @@ table {
     justify-content: space-between;
     min-width: 100%;
     font-size: 1.4rem;
+    padding-top: 0.605rem;
+    padding-bottom: 0.8rem;
   }
   .home-mix-card-container.redhotchillieyellow .card-text-header h3 {
     font-weight: 500;
@@ -645,6 +706,7 @@ table {
     align-items: center;
     max-width: 17rem;
     padding-top: 1rem;
+    padding-bottom: 0.8rem;
   }
   .home-mix-card-container.mfdoomyellow .card-text {
     display: flex;
@@ -661,6 +723,8 @@ table {
     justify-content: space-between;
     min-width: 100%;
     font-size: 1.4rem;
+    padding-top: 0.605rem;
+    padding-bottom: 0.8rem;
   }
   .home-mix-card-container.mfdoomyellow .card-text-header h3 {
     font-weight: 500;
@@ -710,6 +774,7 @@ table {
     align-items: center;
     max-width: 17rem;
     padding-top: 1rem;
+    padding-bottom: 0.8rem;
   }
   .home-mix-card-container.eilishblue .card-text {
     display: flex;
@@ -726,6 +791,8 @@ table {
     justify-content: space-between;
     min-width: 100%;
     font-size: 1.4rem;
+    padding-top: 0.605rem;
+    padding-bottom: 0.8rem;
   }
   .home-mix-card-container.eilishblue .card-text-header h3 {
     font-weight: 500;
@@ -775,6 +842,7 @@ table {
     align-items: center;
     max-width: 17rem;
     padding-top: 1rem;
+    padding-bottom: 0.8rem;
   }
   .home-mix-card-container.daftpunkblue .card-text {
     display: flex;
@@ -791,6 +859,8 @@ table {
     justify-content: space-between;
     min-width: 100%;
     font-size: 1.4rem;
+    padding-top: 0.605rem;
+    padding-bottom: 0.8rem;
   }
   .home-mix-card-container.daftpunkblue .card-text-header h3 {
     font-weight: 500;
@@ -840,6 +910,7 @@ table {
     align-items: center;
     max-width: 17rem;
     padding-top: 1rem;
+    padding-bottom: 0.8rem;
   }
   .home-mix-card-container.turtlespink .card-text {
     display: flex;
@@ -856,6 +927,8 @@ table {
     justify-content: space-between;
     min-width: 100%;
     font-size: 1.4rem;
+    padding-top: 0.605rem;
+    padding-bottom: 0.8rem;
   }
   .home-mix-card-container.turtlespink .card-text-header h3 {
     font-weight: 500;
@@ -905,6 +978,7 @@ table {
     align-items: center;
     max-width: 17rem;
     padding-top: 1rem;
+    padding-bottom: 0.8rem;
   }
   .home-mix-card-container.davidbowieorange .card-text {
     display: flex;
@@ -921,6 +995,8 @@ table {
     justify-content: space-between;
     min-width: 100%;
     font-size: 1.4rem;
+    padding-top: 0.605rem;
+    padding-bottom: 0.8rem;
   }
   .home-mix-card-container.davidbowieorange .card-text-header h3 {
     font-weight: 500;
@@ -970,6 +1046,7 @@ table {
     align-items: center;
     max-width: 17rem;
     padding-top: 1rem;
+    padding-bottom: 0.8rem;
   }
   .home-mix-card-container.minoguegreen .card-text {
     display: flex;
@@ -986,6 +1063,8 @@ table {
     justify-content: space-between;
     min-width: 100%;
     font-size: 1.4rem;
+    padding-top: 0.605rem;
+    padding-bottom: 0.8rem;
   }
   .home-mix-card-container.minoguegreen .card-text-header h3 {
     font-weight: 500;
@@ -1035,6 +1114,7 @@ table {
     align-items: center;
     max-width: 17rem;
     padding-top: 1rem;
+    padding-bottom: 0.8rem;
   }
   .home-mix-card-container.chuckberrydarkpink .card-text {
     display: flex;
@@ -1051,6 +1131,8 @@ table {
     justify-content: space-between;
     min-width: 100%;
     font-size: 1.4rem;
+    padding-top: 0.605rem;
+    padding-bottom: 0.8rem;
   }
   .home-mix-card-container.chuckberrydarkpink .card-text-header h3 {
     font-weight: 500;
@@ -1092,6 +1174,21 @@ table {
     border-radius: 0.725rem;
     transform: translateY(-1rem);
   }
+}
+.home-mix-card-list {
+  display: flex;
+  margin-bottom: 3rem;
+  column-gap: 1.1rem;
+}
+
+body {
+  background-color: black;
+}
+
+.main {
+  border: 0.1rem solid rgba(32, 32, 32, 0.5019607843);
+  border-radius: 1rem;
+  padding: 1.2rem 2.5rem 0 2.5rem;
 }
 
 /*# sourceMappingURL=style.css.map */

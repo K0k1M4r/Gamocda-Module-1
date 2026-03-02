@@ -1,3 +1,8 @@
+@use '../abstract/variables' as *; 
+
+
+
+
 
 // home mix card style
 @mixin home-mix-card-content($theme-color: #CE6E9A) {
@@ -6,6 +11,7 @@
     align-items: center;
     max-width: 17rem;
     padding-top: 1rem;
+    padding-bottom: 0.8rem;
 
     .card-text {
         display: flex;
@@ -13,7 +19,9 @@
         align-items: center;
         color: #898989;
         line-height: 100%;
-        p { font-size: 1.2rem; }
+        p {
+             font-size: 1.2rem;
+        }
     }
 
     .card-text-header {
@@ -21,9 +29,11 @@
         justify-content: space-between;
         min-width: 100%;
         font-size: 1.4rem;
+        padding-top: 0.605rem;
+        padding-bottom: 0.8rem;
             h3 {
              font-weight: 500;
-             color: #E0E0E0; 
+             color: $header-text-color; 
                 }
             span { 
                 font-weight: 400; 

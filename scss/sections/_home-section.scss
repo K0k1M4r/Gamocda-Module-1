@@ -5,18 +5,53 @@
 
 
 
-// 
 
 
-// card list style
-.home-mix-card-list {
+
+// Music and other audio services filter 
+.music-audio-filter {
     display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.6rem;
+    button:nth-child(1) {
+        background-color: $header-text-color;
+        color: #111111;
+    }
+    button {
+        color: $header-text-color;
+        background-color: #20202080;
+        border: none;
+        font-size: 1.4rem;
+        font-weight: 700;
+        padding: 0.8rem 1.5rem;
+        border-radius: 0.8rem;
+    }
+    
+
 }
 
-// 
+
+
+
+// CardList Header
+.card-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h2 {
+        color: $header-text-color;
+        font-size: 2rem;
+        font-weight: 700;
+    }
+    div {
+        display: flex;
+        align-items: center;
+    }
+}
+
+
+//  card home mix card
 @each $card-name, $color in $home-card-colors{
-
-
 
     @include desktop {
         .home-mix-card-container.#{$card-name} {
@@ -27,7 +62,13 @@
 }
 
 
-// card container style
-// .card-container-#{$card-name} {
-//     @include card-content-home-section($theme-color:#CE6E9A)
-// }
+// card list style
+.home-mix-card-list {
+    display: flex;
+    margin-bottom: 3rem;
+    column-gap: 1.1rem;
+}
+
+
+
+
