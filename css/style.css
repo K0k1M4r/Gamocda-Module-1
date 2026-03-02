@@ -27,6 +27,7 @@ footer, header, hgroup, menu, nav, section {
 
 body {
   line-height: 1;
+  font-family: "Satoshi";
 }
 
 ol, ul {
@@ -48,8 +49,95 @@ table {
   border-spacing: 0;
 }
 
-p {
-  font-family: "Satoshi";
+button {
+  background-color: transparent;
+  border: none;
+}
+
+.control-bar {
+  border-radius: 10px;
+  background-color: #333842;
+  display: flex;
+  padding: 20px;
+  justify-content: space-between;
+}
+
+.control-left {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0px;
+}
+.control-left .player {
+  display: flex;
+  gap: 5px;
+}
+.control-left .player__progress {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0px 10px;
+}
+.control-left .player__progress-line {
+  width: 200px;
+}
+
+.track-time {
+  color: #898989;
+  font-size: 12px;
+}
+
+.track-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.track-info {
+  display: flex;
+  flex-direction: column;
+}
+.track-info-title, .track-info-singer, .track-info-album {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 3%;
+  color: #E0E0E0;
+}
+.track-info-singer, .track-info-album {
+  color: #898989;
+}
+.track-picture {
+  width: 51px;
+  height: 51px;
+  flex-shrink: 0;
+}
+.track-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.control-right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.global {
+  border-right: 1px solid #898989;
+  margin-right: 15px;
+}
+
+.player__ai {
+  width: 40px;
+  flex-shrink: 0;
+}
+.player__ai img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 /*# sourceMappingURL=style.css.map */
