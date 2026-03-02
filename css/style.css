@@ -27,6 +27,7 @@ footer, header, hgroup, menu, nav, section {
 
 body {
   line-height: 1;
+  font-family: "Satoshi";
 }
 
 ol, ul {
@@ -48,8 +49,65 @@ table {
   border-spacing: 0;
 }
 
-p {
-  font-family: "Satoshi";
+.home {
+  display: flex;
+  padding-top: 9px;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 170px;
+}
+
+.card-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-text-header {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid red;
+  min-width: 100%;
+}
+
+.card-image-container {
+  border: 1px solid red;
+  display: grid;
+  place-items: end center;
+  align-items: center;
+}
+.card-image-container .card-image,
+.card-image-container .card-image-backlayer1,
+.card-image-container .card-image-backlayer2 {
+  grid-area: 1/1;
+}
+.card-image-container .card-image {
+  height: 170px;
+  width: 170px;
+  z-index: 20;
+  transform: translateY(0);
+  box-shadow: 0 -10px 10px -13px rgba(0, 0, 0, 0.5);
+}
+.card-image-container .card-image-backlayer1 {
+  background-color: #CE6E9A;
+  height: 170px;
+  width: 154px;
+  z-index: 10;
+  border-radius: 7.25px;
+  transform: translateY(-6px);
+  box-shadow: 0 -10px 10px -17px rgba(0, 0, 0, 0.5);
+}
+.card-image-container .card-image-backlayer2 {
+  background-color: #CE6E9A;
+  height: 170px;
+  width: 133px;
+  z-index: 1;
+  border-radius: 7.25px;
+  transform: translateY(-10px);
 }
 
 /*# sourceMappingURL=style.css.map */
