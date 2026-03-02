@@ -58,6 +58,10 @@ html {
   justify-content: space-between;
   margin-bottom: 1.6rem;
 }
+.music-audio-filter div {
+  display: flex;
+  column-gap: 1rem;
+}
 .music-audio-filter button:nth-child(1) {
   background-color: #E0E0E0;
   color: #111111;
