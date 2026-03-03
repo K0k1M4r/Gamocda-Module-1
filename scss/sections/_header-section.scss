@@ -8,6 +8,9 @@
 
 .header {
     display: flex;
+    justify-content: space-between;
+    padding: 3px 10px;
+    background-color: $main-bg-dark;
 }
 
 
@@ -26,6 +29,7 @@
         color: $font-fg-secondary;
         background-color: transparent;
         border: none;
+        // @include header-button();
     }
 }
 
@@ -48,13 +52,15 @@
         font-weight: 400;
         width: 35rem;
         color: $font-fg-secondary;
-       border: none;
+        border: none;
+        background-color: $main-bg-dark;
     }
 }
 
 // Header icons, settings and such
 
 .header-action-icons {
+    padding: 6.79px 0;
     ul {
         display: flex;
         align-items: center;

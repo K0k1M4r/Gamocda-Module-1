@@ -53,6 +53,13 @@ html {
   font-size: 62.5%;
 }
 
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 3px 10px;
+  background-color: #060606;
+}
+
 .header-nav {
   display: flex;
   background-color: none;
@@ -85,8 +92,12 @@ html {
   width: 35rem;
   color: #898989;
   border: none;
+  background-color: #060606;
 }
 
+.header-action-icons {
+  padding: 6.79px 0;
+}
 .header-action-icons ul {
   display: flex;
   align-items: center;
