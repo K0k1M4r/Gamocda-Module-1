@@ -186,13 +186,44 @@ body {
 button {
   background-color: transparent;
   border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
-.player__progress-line-mobile {
-  display: none;
+.control-bar {
+  padding: 0.8rem;
+}
+@media (min-width: 500px) {
+  .control-bar {
+    border-radius: 1rem;
+    background-color: #333842;
+    display: flex;
+    padding: 2rem;
+    justify-content: space-between;
+    min-width: 29rem;
+  }
 }
 
 @media (min-width: 500px) {
+  .control-left {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+  }
+  .control-left .player {
+    display: flex;
+    gap: 0.5rem;
+  }
+  .control-left .player__progress {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0 1rem;
+  }
+  .control-left .player__progress-line {
+    width: 20rem;
   .control-bar {
     border-radius: 1rem;
     background-color: #333842;
@@ -204,10 +235,43 @@ button {
   }
 }
 
-.control-left {
+.control-right {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.player__progress-line-mobile {
+  display: block;
+  width: 97%;
+  position: absolute;
+  top: 6.5rem;
+  left: 0.6rem;
+}
+@media (min-width: 500px) {
+  .player__progress-line-mobile {
+    display: none;
+  }
+}
+
+.player__btn,
+.player__pause {
+  display: none;
+}
+@media (min-width: 500px) {
+  .player__btn,
+  .player__pause {
+    display: flex;
+  }
+}
+
+.player__progress-line {
+  display: none;
+}
+@media (min-width: 500px) {
+  .player__progress-line {
+    display: block;
+  }
   gap: 0rem;
 }
 .control-left .player {
@@ -233,6 +297,18 @@ button {
   display: flex;
   align-items: center;
   gap: 1rem;
+  position: relative;
+}
+
+.track-time {
+  display: none;
+}
+@media (min-width: 500px) {
+  .track-time {
+    display: block;
+    color: #898989;
+    font-size: 1.2rem;
+  }
 }
 
 .track-info {
@@ -248,6 +324,15 @@ button {
 .track-info-singer, .track-info-album {
   color: #898989;
 }
+.track-info-album {
+  display: none;
+}
+@media (min-width: 500px) {
+  .track-info-album {
+    display: block;
+  }
+}
+
 .track-picture {
   width: 5.1rem;
   height: 5.1rem;
@@ -263,12 +348,28 @@ button {
   border-radius: 0.4rem;
 }
 
-.control-right {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.global {
+  border: none;
+  margin-right: 0;
+}
+@media (min-width: 500px) {
+  .global {
+    display: flex;
+    border-right: 0.1rem solid #898989;
+    margin-right: 1.5rem;
+  }
 }
 
+@media (min-width: 500px) {
+  .additions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+.player__ai {
+  display: none;
 .global {
   border-right: 0.1rem solid #898989;
   margin-right: 1.5rem;
@@ -278,11 +379,18 @@ button {
   width: 4rem;
   flex-shrink: 0;
 }
-.player__ai img {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  object-fit: cover;
+@media (min-width: 500px) {
+  .player__ai {
+    display: flex;
+    width: 4rem;
+    flex-shrink: 0;
+  }
+  .player__ai img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+  }
 }
 
 .add-btn {
@@ -290,6 +398,9 @@ button {
 }
 
 .responsive-play-btn {
+  display: inline-block;
+}
+@media (min-width: 500px) {
   display: none;
 }
 
@@ -329,11 +440,7 @@ button {
     display: inline-block;
   }
   .responsive-play-btn {
-    display: inline-block;
-  }
-  .global {
-    border: none;
-    margin-right: 0;
+    display: none;
   }
 }
 
