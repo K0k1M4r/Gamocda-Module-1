@@ -126,58 +126,111 @@ html {
   height: 4rem;
   flex: none;
   color: #898989;
+}
+
 body {
   background-color: black;
-}
 }
 
 button {
   background-color: transparent;
   border: none;
-}
-
-.player__progress-line-mobile {
-  display: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
 .control-bar {
-  border-radius: 10px;
-  background-color: #333842;
-  display: flex;
-  padding: 20px;
-  justify-content: space-between;
-  min-width: 290px;
+  padding: 0.8rem;
+}
+@media (min-width: 500px) {
+  .control-bar {
+    border-radius: 1rem;
+    background-color: #333842;
+    display: flex;
+    padding: 2rem;
+    justify-content: space-between;
+    min-width: 29rem;
+  }
 }
 
-.control-left {
+@media (min-width: 500px) {
+  .control-left {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+  }
+  .control-left .player {
+    display: flex;
+    gap: 0.5rem;
+  }
+  .control-left .player__progress {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0 1rem;
+  }
+  .control-left .player__progress-line {
+    width: 20rem;
+  }
+}
+
+.control-right {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 0px;
-}
-.control-left .player {
-  display: flex;
-  gap: 5px;
-}
-.control-left .player__progress {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  padding: 0px 10px;
-}
-.control-left .player__progress-line {
-  width: 200px;
 }
 
-.track-time {
-  color: #898989;
-  font-size: 12px;
+.player__progress-line-mobile {
+  display: block;
+  width: 97%;
+  position: absolute;
+  top: 6.5rem;
+  left: 0.6rem;
+}
+@media (min-width: 500px) {
+  .player__progress-line-mobile {
+    display: none;
+  }
+}
+
+.player__btn,
+.player__pause {
+  display: none;
+}
+@media (min-width: 500px) {
+  .player__btn,
+  .player__pause {
+    display: flex;
+  }
+}
+
+.player__progress-line {
+  display: none;
+}
+@media (min-width: 500px) {
+  .player__progress-line {
+    display: block;
+  }
 }
 
 .track-meta {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 1rem;
+  position: relative;
+}
+
+.track-time {
+  display: none;
+}
+@media (min-width: 500px) {
+  .track-time {
+    display: block;
+    color: #898989;
+    font-size: 1.2rem;
+  }
 }
 
 .track-info {
@@ -185,7 +238,7 @@ button {
   flex-direction: column;
 }
 .track-info-title, .track-info-singer, .track-info-album {
-  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: 400;
   letter-spacing: 3%;
   color: #E0E0E0;
@@ -193,9 +246,18 @@ button {
 .track-info-singer, .track-info-album {
   color: #898989;
 }
+.track-info-album {
+  display: none;
+}
+@media (min-width: 500px) {
+  .track-info-album {
+    display: block;
+  }
+}
+
 .track-picture {
-  width: 51px;
-  height: 51px;
+  width: 5.1rem;
+  height: 5.1rem;
   flex-shrink: 0;
 }
 .track-picture-mobile {
@@ -205,29 +267,44 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 4px;
-}
-
-.control-right {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  border-radius: 0.4rem;
 }
 
 .global {
-  border-right: 1px solid #898989;
-  margin-right: 15px;
+  border: none;
+  margin-right: 0;
+}
+@media (min-width: 500px) {
+  .global {
+    display: flex;
+    border-right: 0.1rem solid #898989;
+    margin-right: 1.5rem;
+  }
+}
+
+@media (min-width: 500px) {
+  .additions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
 }
 
 .player__ai {
-  width: 40px;
-  flex-shrink: 0;
+  display: none;
 }
-.player__ai img {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  object-fit: cover;
+@media (min-width: 500px) {
+  .player__ai {
+    display: flex;
+    width: 4rem;
+    flex-shrink: 0;
+  }
+  .player__ai img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+  }
 }
 
 .add-btn {
@@ -235,50 +312,11 @@ button {
 }
 
 .responsive-play-btn {
-  display: none;
+  display: inline-block;
 }
-
-@media (max-width: 1299px) {
-  .player__btn, .player__ai, .player__pause, .player__progress-line, .track-time, .track-info-album {
-    display: none;
-  }
-  .track-meta {
-    position: relative;
-  }
-  .player__progress-line-mobile {
-    display: flex;
-    width: 97%;
-    position: absolute;
-    top: 88px;
-    left: 6px;
-  }
-}
-@media (max-width: 500px) {
-  .player__btn, .player__ai, .player__pause, .player__progress-line, .track-time, .track-info-album {
-    display: none;
-  }
-  .control-bar {
-    padding: 8px 8px;
-  }
-  .track-meta {
-    position: relative;
-  }
-  .player__progress-line-mobile {
-    display: block;
-    width: 97%;
-    position: absolute;
-    top: 65px;
-    left: 6px;
-  }
-  .add-btn {
-    display: inline-block;
-  }
+@media (min-width: 500px) {
   .responsive-play-btn {
-    display: inline-block;
-  }
-  .global {
-    border: none;
-    margin-right: 0;
+    display: none;
   }
 }
 
