@@ -27,6 +27,7 @@ footer, header, hgroup, menu, nav, section {
 
 body {
   line-height: 1;
+  font-family: "Satoshi";
 }
 
 ol, ul {
@@ -46,6 +47,239 @@ q:before, q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.sidebar {
+  display: none;
+}
+@media (min-width: 500px) {
+  .sidebar {
+    display: block;
+    background-color: #060606;
+    color: #898989;
+    width: 25.9rem;
+    height: 95.7rem;
+    padding: 1.1rem;
+    position: relative;
+  }
+  .sidebar .sidebar-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.1rem;
+  }
+}
+
+.sidebar-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border-radius: 1rem;
+  flex: none;
+  transition: all 0.3s ease;
+}
+.sidebar-items:hover {
+  background-color: rgba(59, 59, 60, 0.8);
+}
+.sidebar-items:hover .item-label {
+  color: #E0E0E0;
+}
+.sidebar-items:hover .icon img {
+  border-color: #E0E0E0;
+}
+.sidebar-items:hover .sidebar-arrow {
+  color: #E0E0E0;
+}
+.sidebar-items .sidebar-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  height: 100%;
+}
+.sidebar-items .icon {
+  width: 4.0410816193rem;
+  height: 4.0410816193rem;
+  border-radius: 0.2rem;
+  display: flex;
+  justify-content: center;
+  flex: none;
+}
+.sidebar-items .icon img {
+  width: 1.92rem;
+  height: 1.92rem;
+  border: 0.232rem solid #898989;
+}
+.sidebar-items .item-label {
+  font-size: 1.4rem;
+  line-height: 100%;
+  letter-spacing: 3%;
+}
+.sidebar-items .sidebar-arrow {
+  width: 4rem;
+  height: 4rem;
+  flex: none;
+  color: #898989;
+body {
+  background-color: black;
+}
+}
+
+button {
+  background-color: transparent;
+  border: none;
+}
+
+.player__progress-line-mobile {
+  display: none;
+}
+
+.control-bar {
+  border-radius: 10px;
+  background-color: #333842;
+  display: flex;
+  padding: 20px;
+  justify-content: space-between;
+  min-width: 290px;
+}
+
+.control-left {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0px;
+}
+.control-left .player {
+  display: flex;
+  gap: 5px;
+}
+.control-left .player__progress {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0px 10px;
+}
+.control-left .player__progress-line {
+  width: 200px;
+}
+
+.track-time {
+  color: #898989;
+  font-size: 12px;
+}
+
+.track-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.track-info {
+  display: flex;
+  flex-direction: column;
+}
+.track-info-title, .track-info-singer, .track-info-album {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 3%;
+  color: #E0E0E0;
+}
+.track-info-singer, .track-info-album {
+  color: #898989;
+}
+.track-picture {
+  width: 51px;
+  height: 51px;
+  flex-shrink: 0;
+}
+.track-picture-mobile {
+  display: none;
+}
+.track-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.control-right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.global {
+  border-right: 1px solid #898989;
+  margin-right: 15px;
+}
+
+.player__ai {
+  width: 40px;
+  flex-shrink: 0;
+}
+.player__ai img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.add-btn {
+  display: inline-block;
+}
+
+.responsive-play-btn {
+  display: none;
+}
+
+@media (max-width: 1299px) {
+  .player__btn, .player__ai, .player__pause, .player__progress-line, .track-time, .track-info-album {
+    display: none;
+  }
+  .track-meta {
+    position: relative;
+  }
+  .player__progress-line-mobile {
+    display: flex;
+    width: 97%;
+    position: absolute;
+    top: 88px;
+    left: 6px;
+  }
+}
+@media (max-width: 500px) {
+  .player__btn, .player__ai, .player__pause, .player__progress-line, .track-time, .track-info-album {
+    display: none;
+  }
+  .control-bar {
+    padding: 8px 8px;
+  }
+  .track-meta {
+    position: relative;
+  }
+  .player__progress-line-mobile {
+    display: block;
+    width: 97%;
+    position: absolute;
+    top: 65px;
+    left: 6px;
+  }
+  .add-btn {
+    display: inline-block;
+  }
+  .responsive-play-btn {
+    display: inline-block;
+  }
+  .global {
+    border: none;
+    margin-right: 0;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
