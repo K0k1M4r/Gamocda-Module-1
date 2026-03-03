@@ -15,11 +15,15 @@ button {
 
 // Player controls
 .control-bar {
+    display: flex;
+    justify-content: space-between;
     padding: 0.8rem;
+    position: relative;
+    border-radius: 1rem;
+        background-color: #333842;
 
     @include desktop {
-        border-radius: 1rem;
-        background-color: #333842;
+        
         display: flex;
         padding: 2rem;
         justify-content: space-between;
