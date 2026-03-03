@@ -53,6 +53,57 @@ html {
   font-size: 62.5%;
 }
 
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 3px 10px;
+  background-color: #060606;
+}
+
+.header-nav {
+  display: flex;
+  background-color: none;
+}
+.header-nav button {
+  display: flex;
+  align-items: center;
+  padding: 0.7rem 1.5rem;
+  width: 21rem;
+  column-gap: 1rem;
+  color: #898989;
+  background-color: transparent;
+  border: none;
+}
+
+.search-container {
+  position: relative;
+  width: fit-content;
+  border: none;
+}
+.search-container img {
+  position: absolute;
+  left: 4%;
+  top: 18%;
+}
+.search-container input {
+  padding: 1.2rem 5rem;
+  font-size: 1.4rem;
+  font-weight: 400;
+  width: 35rem;
+  color: #898989;
+  border: none;
+  background-color: #060606;
+}
+
+.header-action-icons {
+  padding: 6.79px 0;
+}
+.header-action-icons ul {
+  display: flex;
+  align-items: center;
+  column-gap: 1.3rem;
+}
+
 .sidebar {
   display: none;
 }
@@ -62,7 +113,7 @@ html {
     background-color: #060606;
     color: #898989;
     width: 25.9rem;
-    height: 95.7rem;
+    height: 100vh;
     padding: 1.1rem;
     position: relative;
   }
@@ -126,9 +177,10 @@ html {
   height: 4rem;
   flex: none;
   color: #898989;
+}
+
 body {
   background-color: black;
-}
 }
 
 button {
@@ -140,44 +192,47 @@ button {
   display: none;
 }
 
-.control-bar {
-  border-radius: 10px;
-  background-color: #333842;
-  display: flex;
-  padding: 20px;
-  justify-content: space-between;
-  min-width: 290px;
+@media (min-width: 500px) {
+  .control-bar {
+    border-radius: 1rem;
+    background-color: #333842;
+    display: flex;
+    padding: 2rem;
+    justify-content: space-between;
+    min-width: 29rem;
+    max-width: 80%;
+  }
 }
 
 .control-left {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 0px;
+  gap: 0rem;
 }
 .control-left .player {
   display: flex;
-  gap: 5px;
+  gap: 0.5rem;
 }
 .control-left .player__progress {
   display: flex;
   align-items: center;
-  gap: 5px;
-  padding: 0px 10px;
+  gap: 0.5rem;
+  padding: 0rem 1rem;
 }
 .control-left .player__progress-line {
-  width: 200px;
+  width: 20rem;
 }
 
 .track-time {
   color: #898989;
-  font-size: 12px;
+  font-size: 1.2rem;
 }
 
 .track-meta {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 1rem;
 }
 
 .track-info {
@@ -185,7 +240,7 @@ button {
   flex-direction: column;
 }
 .track-info-title, .track-info-singer, .track-info-album {
-  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: 400;
   letter-spacing: 3%;
   color: #E0E0E0;
@@ -194,8 +249,8 @@ button {
   color: #898989;
 }
 .track-picture {
-  width: 51px;
-  height: 51px;
+  width: 5.1rem;
+  height: 5.1rem;
   flex-shrink: 0;
 }
 .track-picture-mobile {
@@ -205,7 +260,7 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 4px;
+  border-radius: 0.4rem;
 }
 
 .control-right {
@@ -215,12 +270,12 @@ button {
 }
 
 .global {
-  border-right: 1px solid #898989;
-  margin-right: 15px;
+  border-right: 0.1rem solid #898989;
+  margin-right: 1.5rem;
 }
 
 .player__ai {
-  width: 40px;
+  width: 4rem;
   flex-shrink: 0;
 }
 .player__ai img {
@@ -238,7 +293,7 @@ button {
   display: none;
 }
 
-@media (max-width: 1299px) {
+@media (max-width: 129.9rem) {
   .player__btn, .player__ai, .player__pause, .player__progress-line, .track-time, .track-info-album {
     display: none;
   }
@@ -249,16 +304,16 @@ button {
     display: flex;
     width: 97%;
     position: absolute;
-    top: 88px;
-    left: 6px;
+    top: 8.8rem;
+    left: 0.6rem;
   }
 }
-@media (max-width: 500px) {
+@media (max-width: 50rem) {
   .player__btn, .player__ai, .player__pause, .player__progress-line, .track-time, .track-info-album {
     display: none;
   }
   .control-bar {
-    padding: 8px 8px;
+    padding: 0.8rem 0.8rem;
   }
   .track-meta {
     position: relative;
@@ -267,8 +322,8 @@ button {
     display: block;
     width: 97%;
     position: absolute;
-    top: 65px;
-    left: 6px;
+    top: 6.5rem;
+    left: 0.6rem;
   }
   .add-btn {
     display: inline-block;
