@@ -1,36 +1,64 @@
 @use '../abstract/mixins' as *;
 @use '../universal components/components' as *;
 @use '../abstract/responsive' as *;
+@use '../abstract/variables' as *;
 
 
+// header
+
+.header {
+    display: flex;
+}
+
+
+
+// Header Home buttton, 
 
 .header-nav {
     display: flex;
-    
+    background-color: none;
     button {
         display: flex;
         align-items: center;
         padding: 0.7rem 1.5rem;
         width: 21rem;
         column-gap: 1rem;
+        color: $font-fg-secondary;
+        background-color: transparent;
+        border: none;
     }
 }
 
 
+// Search Container
 
 .search-container {
     position: relative;
     width: fit-content;
+    border: none;
     img {
         position: absolute;
         left: 4%;
         top: 18%;
-
     }
 
     input {
         padding: 1.2rem 5rem;
         font-size: 1.4rem;
         font-weight: 400;
+        width: 35rem;
+        color: $font-fg-secondary;
+       border: none;
     }
 }
+
+// Header icons, settings and such
+
+.header-action-icons {
+    ul {
+        display: flex;
+        align-items: center;
+        column-gap: 1.3rem;
+    }
+}
+
