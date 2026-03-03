@@ -4,18 +4,23 @@
 @use '../abstract/_variables.scss' as *;
 
 .sidebar{
-    background-color: $main-bg-dark;
-    color: $font-fg-secondary;
-    width: 25.9rem;
-    height: 95.7rem;
-    padding: 1.1rem;
-    position: relative;
+        display:none;
 
-    .sidebar-content{
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1.1rem;
+        @include desktop{
+            display: block;
+            background-color: $main-bg-dark;
+            color: $font-fg-secondary;
+            width: 25.9rem;
+            height: 95.7rem;
+            padding: 1.1rem;
+            position: relative;
+
+        .sidebar-content{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1.1rem;
+        }
     }
 }
 
