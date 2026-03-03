@@ -1,3 +1,89 @@
 @use '../abstract/mixins' as *;
 @use '../universal components/components' as *;
 @use '../abstract/responsive' as *;
+@use '../abstract/_variables.scss' as *;
+
+.sidebar{
+        display:none;
+
+        @include desktop{
+            display: block;
+            background-color: $main-bg-dark;
+            color: $font-fg-secondary;
+            width: 25.9rem;
+            height: 95.7rem;
+            padding: 1.1rem;
+            position: relative;
+
+        .sidebar-content{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1.1rem;
+        }
+    }
+}
+
+.sidebar-items{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border-radius: 1rem;
+    flex:none;
+    transition: all 0.3s ease;
+
+      &:hover {
+        background-color: $hover-bg;
+
+        .item-label {
+            color: $font-fg-primary;
+        }
+
+        .icon img {
+            border-color: $font-fg-primary;
+        }
+
+        .sidebar-arrow {
+            color: $font-fg-primary;
+        }
+    }
+    
+
+    .sidebar-item{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap:1rem;
+        height: 100%;
+    }
+
+    .icon{
+        width: 4.041081619262695rem;
+        height: 4.041081619262695rem;
+        border-radius: 0.2rem;
+        display: flex;
+        justify-content: center;
+        flex:none;
+
+        img{
+            width: 1.92rem;
+            height: 1.92rem;
+            border: 0.232rem solid $font-fg-secondary;
+        }
+    }
+
+    .item-label{
+        font-size: 1.4rem;
+        line-height: 100%;
+        letter-spacing: 3%;
+    }
+
+    .sidebar-arrow{
+        width: 4rem;
+        height: 4rem;
+        flex:none;
+        color: $font-fg-secondary;
+    }
+}
