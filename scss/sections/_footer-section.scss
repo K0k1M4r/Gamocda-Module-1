@@ -20,7 +20,7 @@ button {
     padding: 0.8rem;
     position: relative;
     border-radius: 1rem;
-        background-color: #333842;
+    background-color: #333842;
 
     @include desktop {
         
@@ -29,10 +29,15 @@ button {
         justify-content: space-between;
         min-width: 29rem;
     }
+
+    // @include tablet {
+    //     .control-left{ display: none; }
+    // }
 }
 
 // Left side of the control bar
 .control-left {
+    
     @include desktop {
         display: flex;
         justify-content: space-between;
@@ -118,12 +123,11 @@ button {
         font-weight: 400;
         letter-spacing: 3%;
         color: #E0E0E0;
+        padding-bottom: 2px;
     }
 
     &-singer { @extend .track-info-title; color: #898989; }
-    &-album  {
-        @extend .track-info-singer;
-        display: none;
+    &-album  { @extend .track-info-singer; display: none;
 
         @include desktop { display: block; }
     }
@@ -178,3 +182,4 @@ button {
 
     @include desktop { display: none; }
 }
+
