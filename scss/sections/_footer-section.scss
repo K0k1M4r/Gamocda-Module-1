@@ -1,10 +1,11 @@
 @use '../abstract/mixins' as *;
 @use '../universal components/components' as *;
 @use '../abstract/responsive' as *;
+@use '../abstract/variables' as *;
 
 // Basic styles
-body { 
-    background-color: black; }
+// body { 
+//     background-color: black; }
 
 
 // koki code
@@ -21,7 +22,6 @@ footer {
 // <-- end of koki code
 
 
-
 button {
     background-color: transparent;
     border: none;
@@ -32,21 +32,20 @@ button {
 
 // Player controls
 .control-bar {
+    grid-area: control-bar;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 0.8rem;
-    position: relative;
+    // position: relative;
+    // z-index: 5;
     border-radius: 1rem;
-    background-color: #333842;
+    background-color: $control-bar-bg;
 
     @include desktop {
         
-        
-        
-        
         padding: 2rem;
         justify-content: space-between;
-        // width: calc(100vw - 32.1rem);
     }
 
     // @include tablet {

@@ -16,24 +16,45 @@
 @use './sections/discover-section';
 @use './sections/footer-section';
 @use './sections/_friends-sidebar-section.scss';
+@use './abstract/variables' as *;
+@use './abstract/mixins' as *;
+@use './abstract/responsive' as *;
 
 
 
 
 
 body {
-      display: grid;
-      grid-template-areas:
-        ".sidebar .header"
-        ".sidebar .main"
-        ".sidebar .control-bar";
-      grid-template-columns: 25.9rem 1fr;
-      grid-template-rows: 30px 1fr 3rem;
-      height: 100vh;
+
+  margin: 0;
+  display: grid;
+  grid-template-areas: 
+    "header"
+    "main"
+    "control-bar";
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto; 
+  height: 100dvh;
+  background-color: $main-bg-dark;
       
+  @include desktop {
+
+      grid-template-areas:
+      "sidebar header"
+      "sidebar main"
+      "sidebar control-bar";
+    grid-template-columns: $sidebar-w 1fr;
+    grid-template-rows: auto 1fr auto;
+    // height: 100vh;
     }
+  }
 
-
+main {
+  grid-area: main;
+  min-height: 0;
+  border: 1px solid #202020;
+  border-radius: 10px;
+}
 
 
 
