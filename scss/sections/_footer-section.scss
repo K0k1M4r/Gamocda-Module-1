@@ -3,7 +3,24 @@
 @use '../abstract/responsive' as *;
 
 // Basic styles
-body { background-color: black; }
+body { 
+    background-color: black; }
+
+
+// koki code
+// added thi in order to push it to side
+footer {
+
+    @include desktop {
+        // display: flex;
+        // justify-content: flex-end;
+    }
+    
+}
+
+// <-- end of koki code
+
+
 
 button {
     background-color: transparent;
@@ -24,10 +41,12 @@ button {
 
     @include desktop {
         
-        display: flex;
+        
+        
+        
         padding: 2rem;
         justify-content: space-between;
-        min-width: 29rem;
+        // width: calc(100vw - 32.1rem);
     }
 
     // @include tablet {

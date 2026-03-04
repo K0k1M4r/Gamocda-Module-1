@@ -3,17 +3,22 @@
 @use '../abstract/responsive' as *;
 @use '../abstract/_variables.scss' as *;
 
+
+
 .sidebar{
         display:none;
 
         @include desktop{
-            display: block;
-            background-color: $main-bg-dark;
+            display: flex;
+            background-color: red;
+            // background-color: $main-bg-dark;
             color: $font-fg-secondary;
             width: 25.9rem;
             height: 100vh;
             padding: 1.1rem;
-            position: relative;
+            // position: fixed;
+            
+            
 
         .sidebar-content{
             display: flex;

@@ -109,13 +109,12 @@ html {
 }
 @media (min-width: 500px) {
   .sidebar {
-    display: block;
-    background-color: #060606;
+    display: flex;
+    background-color: red;
     color: #898989;
     width: 25.9rem;
     height: 100vh;
     padding: 1.1rem;
-    position: relative;
   }
   .sidebar .sidebar-content {
     display: flex;
@@ -201,10 +200,8 @@ button {
 }
 @media (min-width: 500px) {
   .control-bar {
-    display: flex;
     padding: 2rem;
     justify-content: space-between;
-    min-width: 29rem;
   }
 }
 
@@ -373,6 +370,14 @@ button {
   .responsive-play-btn {
     display: none;
   }
+}
+
+body {
+  display: grid;
+  grid-template-areas: ".sidebar .header" ".sidebar .main" ".sidebar .control-bar";
+  grid-template-columns: 25.9rem 1fr;
+  grid-template-rows: 30px 1fr 3rem;
+  height: 100vh;
 }
 
 /*# sourceMappingURL=style.css.map */
