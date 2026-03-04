@@ -7,12 +7,34 @@
 
 
 
-
-// Music and other audio services filter 
+ 
+// mobile Music and other audio services filter 
 .music-audio-filter {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 1.6rem;
+    
+    div {
+        display: flex;
+        column-gap: 10px;
+    }
+    button {
+        @include music-audio-filter-button();
+        font-size: 12px;
+        font-weight: 400;
+    }
+    button:nth-child(1) {
+        display: none;
+    }
+    
+}
+
+// desctop Music and other audio services filter 
+
+.music-audio-filter {
+    @include desktop {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1.6rem;
 
     div {
         display: flex;
@@ -20,30 +42,37 @@
     }
 
     button:nth-child(1) {
+        display: flex;
         background-color: $header-text-color;
         color: #111111;
     }
     button {
-        color: $header-text-color;
-        background-color: #20202080;
-        border: none;
-        font-size: 1.4rem;
-        font-weight: 700;
-        padding: 0.8rem 1.5rem;
-        border-radius: 0.8rem;
+        @include music-audio-filter-button()
     }
     
-
+    }
 }
 
 
 
-
-// CardList Header
+// mobile CardList Header
 .card-list-header {
+    padding-bottom: 1.5rem;
+    img:nth-child(1),
+    img:nth-child(2) {
+        display: none;
+    }
+}
+
+// desctop CardList Header
+.card-list-header {
+    @include desktop {}
     display: flex;
     justify-content: space-between;
     align-items: center;
+    img {
+        display: flex;
+    }
     h2 {
         color: $header-text-color;
         font-size: 2rem;
@@ -56,7 +85,14 @@
 }
 
 
-//  card home mix card
+//  mobile card home mix card
+@each $card-name, $color in $home-card-colors{
+    .home-mix-card-container.#{$card-name} {
+        @include mobile-home-mix-card-content($theme-color:$color);
+    }
+}
+
+//  desctop card home mix card
 @each $card-name, $color in $home-card-colors{
 
     @include desktop {
@@ -69,10 +105,21 @@
 
 
 // card list style
+
 .home-mix-card-list {
     display: flex;
+    column-gap: 9px;
     margin-bottom: 3rem;
-    column-gap: 1.1rem;
+}  
+
+// desctop card list style
+.home-mix-card-list {
+    @include desktop {
+        display: flex;
+        margin-bottom: 3rem;
+        column-gap: 1.1rem;
+    }
+    
 }
 
 
