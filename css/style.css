@@ -192,12 +192,15 @@ button {
 }
 
 .control-bar {
+  display: flex;
+  justify-content: space-between;
   padding: 0.8rem;
+  position: relative;
+  border-radius: 1rem;
+  background-color: #333842;
 }
 @media (min-width: 500px) {
   .control-bar {
-    border-radius: 1rem;
-    background-color: #333842;
     display: flex;
     padding: 2rem;
     justify-content: space-between;
@@ -224,14 +227,6 @@ button {
   }
   .control-left .player__progress-line {
     width: 20rem;
-  .control-bar {
-    border-radius: 1rem;
-    background-color: #333842;
-    display: flex;
-    padding: 2rem;
-    justify-content: space-between;
-    min-width: 29rem;
-    max-width: 80%;
   }
 }
 
@@ -272,25 +267,6 @@ button {
   .player__progress-line {
     display: block;
   }
-  gap: 0rem;
-}
-.control-left .player {
-  display: flex;
-  gap: 0.5rem;
-}
-.control-left .player__progress {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0rem 1rem;
-}
-.control-left .player__progress-line {
-  width: 20rem;
-}
-
-.track-time {
-  color: #898989;
-  font-size: 1.2rem;
 }
 
 .track-meta {
@@ -320,6 +296,7 @@ button {
   font-weight: 400;
   letter-spacing: 3%;
   color: #E0E0E0;
+  padding-bottom: 2px;
 }
 .track-info-singer, .track-info-album {
   color: #898989;
@@ -370,14 +347,6 @@ button {
 
 .player__ai {
   display: none;
-.global {
-  border-right: 0.1rem solid #898989;
-  margin-right: 1.5rem;
-}
-
-.player__ai {
-  width: 4rem;
-  flex-shrink: 0;
 }
 @media (min-width: 500px) {
   .player__ai {
@@ -401,44 +370,6 @@ button {
   display: inline-block;
 }
 @media (min-width: 500px) {
-  display: none;
-}
-
-@media (max-width: 129.9rem) {
-  .player__btn, .player__ai, .player__pause, .player__progress-line, .track-time, .track-info-album {
-    display: none;
-  }
-  .track-meta {
-    position: relative;
-  }
-  .player__progress-line-mobile {
-    display: flex;
-    width: 97%;
-    position: absolute;
-    top: 8.8rem;
-    left: 0.6rem;
-  }
-}
-@media (max-width: 50rem) {
-  .player__btn, .player__ai, .player__pause, .player__progress-line, .track-time, .track-info-album {
-    display: none;
-  }
-  .control-bar {
-    padding: 0.8rem 0.8rem;
-  }
-  .track-meta {
-    position: relative;
-  }
-  .player__progress-line-mobile {
-    display: block;
-    width: 97%;
-    position: absolute;
-    top: 6.5rem;
-    left: 0.6rem;
-  }
-  .add-btn {
-    display: inline-block;
-  }
   .responsive-play-btn {
     display: none;
   }
