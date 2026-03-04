@@ -62,7 +62,7 @@ html {
     background-color: #060606;
     color: #898989;
     width: 25.9rem;
-    height: 95.7rem;
+    height: 100vh;
     padding: 1.1rem;
     position: relative;
   }
@@ -76,25 +76,23 @@ html {
 
 .sidebar-items {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   align-items: center;
   width: 100%;
   border-radius: 1rem;
   flex: none;
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 .sidebar-items:hover {
   background-color: rgba(59, 59, 60, 0.8);
 }
-.sidebar-items:hover .item-label {
+.sidebar-items:hover .item-label .sidebar-arrow {
   color: #E0E0E0;
 }
 .sidebar-items:hover .icon img {
   border-color: #E0E0E0;
-}
-.sidebar-items:hover .sidebar-arrow {
-  color: #E0E0E0;
 }
 .sidebar-items .sidebar-item {
   display: flex;
@@ -104,11 +102,12 @@ html {
   height: 100%;
 }
 .sidebar-items .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 4.0410816193rem;
   height: 4.0410816193rem;
   border-radius: 0.2rem;
-  display: flex;
-  justify-content: center;
   flex: none;
 }
 .sidebar-items .icon img {
@@ -126,9 +125,10 @@ html {
   height: 4rem;
   flex: none;
   color: #898989;
+}
+
 body {
   background-color: black;
-}
 }
 
 button {

@@ -3,15 +3,15 @@
 @use '../abstract/responsive' as *;
 @use '../abstract/_variables.scss' as *;
 
-.sidebar{
-        display:none;
+.sidebar{ //main container for sidebar
+        display:none; 
 
         @include desktop{
             display: block;
             background-color: $main-bg-dark;
             color: $font-fg-secondary;
             width: 25.9rem;
-            height: 95.7rem;
+            height: 100vh;
             padding: 1.1rem;
             position: relative;
 
@@ -25,28 +25,23 @@
 }
 
 .sidebar-items{
-    display:flex;
-    flex-direction: row;
-    justify-content: space-between;
+    @include flex-between;
     align-items: center;
     width: 100%;
     border-radius: 1rem;
     flex:none;
     transition: all 0.3s ease;
+    cursor:pointer;
 
       &:hover {
         background-color: $hover-bg;
 
-        .item-label {
+        .item-label .sidebar-arrow{
             color: $font-fg-primary;
         }
 
         .icon img {
             border-color: $font-fg-primary;
-        }
-
-        .sidebar-arrow {
-            color: $font-fg-primary;
         }
     }
     
@@ -60,11 +55,10 @@
     }
 
     .icon{
+        @include flex-center;
         width: 4.041081619262695rem;
         height: 4.041081619262695rem;
         border-radius: 0.2rem;
-        display: flex;
-        justify-content: center;
         flex:none;
 
         img{
