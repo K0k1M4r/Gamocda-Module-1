@@ -5,13 +5,26 @@
 
 
 
+.main {
+    padding: 1.2rem 2.5rem 0 2.5rem;
+}
 
+.main {
+    @include desktop {
+        border: 0.1rem solid #20202080;
+        border-radius: 1rem;
+        padding: 1.2rem 2.5rem 0 2.5rem;
+    }
+    
+    
+}
 
  
 // mobile Music and other audio services filter 
 .music-audio-filter {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 2.2rem;
     
     div {
         display: flex;
@@ -25,8 +38,9 @@
     button:nth-child(1) {
         display: none;
     }
-    
 }
+
+
 
 // desctop Music and other audio services filter 
 
@@ -54,22 +68,78 @@
 }
 
 
+.mobile-insta-access-music-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    
+}
+
+
+.mobile-insta-access-container {
+    display: flex;
+    background-color: #202020;
+    padding: 0.8rem;
+    width: 45%;
+    border-radius: 1rem;
+    div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        row-gap: 0.1rem;
+        min-width: 0;
+        padding-left: 0.8rem;
+    }
+    img {
+        height: 4.3rem;
+        border-radius: 3px;
+    }    
+}
+
+.mobile-insta-access-container {
+    h4 {
+        color: #E0E0E0;
+        font-size: 1.4rem;
+        font-weight: 400;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    p {
+        color: #898989;
+        font-size: 1.4rem;
+        font-weight: 400;
+    }
+}
+
 
 // mobile CardList Header
 .card-list-header {
     padding-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    h2 {
+        color: $header-text-color;
+        font-size: 2rem;
+        font-weight: 700;
+    }
     img:nth-child(1),
     img:nth-child(2) {
         display: none;
     }
 }
 
+
+
 // desctop CardList Header
 .card-list-header {
-    @include desktop {}
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
+    @include desktop {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     img {
         display: flex;
     }
@@ -77,11 +147,18 @@
         color: $header-text-color;
         font-size: 2rem;
         font-weight: 700;
+        
     }
     div {
         display: flex;
         align-items: center;
     }
+    img:nth-child(1),
+    img:nth-child(2) {
+        display: flex;
+    }
+    }
+    
 }
 
 
@@ -110,6 +187,8 @@
     display: flex;
     column-gap: 9px;
     margin-bottom: 3rem;
+    
+    
 }  
 
 // desctop card list style
