@@ -54,6 +54,7 @@ html {
 }
 
 .header {
+  grid-area: header;
   display: flex;
   justify-content: space-between;
   padding: 3px 10px;
@@ -105,16 +106,16 @@ html {
 }
 
 .sidebar {
+  grid-area: sidebar;
   display: none;
 }
 @media (min-width: 500px) {
   .sidebar {
     display: flex;
-    background-color: red;
+    background-color: #060606;
     color: #898989;
-    width: 25.9rem;
-    height: 100vh;
     padding: 1.1rem;
+    top: 0;
   }
   .sidebar .sidebar-content {
     display: flex;
@@ -178,10 +179,6 @@ html {
   color: #898989;
 }
 
-body {
-  background-color: black;
-}
-
 button {
   background-color: transparent;
   border: none;
@@ -191,10 +188,11 @@ button {
 }
 
 .control-bar {
+  grid-area: control-bar;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 0.8rem;
-  position: relative;
   border-radius: 1rem;
   background-color: #333842;
 }
@@ -373,11 +371,27 @@ button {
 }
 
 body {
+  margin: 0;
   display: grid;
-  grid-template-areas: ".sidebar .header" ".sidebar .main" ".sidebar .control-bar";
-  grid-template-columns: 25.9rem 1fr;
-  grid-template-rows: 30px 1fr 3rem;
-  height: 100vh;
+  grid-template-areas: "header" "main" "control-bar";
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  height: 100dvh;
+  background-color: #060606;
+}
+@media (min-width: 500px) {
+  body {
+    grid-template-areas: "sidebar header" "sidebar main" "sidebar control-bar";
+    grid-template-columns: 25.9rem 1fr;
+    grid-template-rows: auto 1fr auto;
+  }
+}
+
+main {
+  grid-area: main;
+  min-height: 0;
+  border: 1px solid #202020;
+  border-radius: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */
