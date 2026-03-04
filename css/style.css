@@ -122,6 +122,12 @@ html {
   gap: 1rem;
 }
 
+@media (min-width: 500px) {
+  .mobile-insta-access-music-list {
+    display: none;
+  }
+}
+
 .mobile-insta-access-container {
   display: flex;
   background-color: #202020;

@@ -77,6 +77,13 @@
 }
 
 
+.mobile-insta-access-music-list {
+    @include desktop {
+        display: none;
+    }
+}
+
+
 .mobile-insta-access-container {
     display: flex;
     background-color: #202020;
@@ -112,6 +119,9 @@
         font-weight: 400;
     }
 }
+
+
+
 
 
 // mobile CardList Header
