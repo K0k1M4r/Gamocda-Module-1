@@ -17,7 +17,7 @@ button {
     align-items: center;
     justify-content: space-between;
     padding: 0.8rem;
-    padding-bottom: 1.6rem; // место под мобильный прогресс-бар
+    padding-bottom: 1.6rem; 
     cursor: pointer;
     background-color: $control-bar-bg;
     border-radius: 1rem;
@@ -35,7 +35,7 @@ button {
     }
 }
 
-// ── Прогресс-бар ─────────────────────────────────────────────────
+// ── Progress-bar ─────────────────────────────────────────────────
 .progress-bar {
     flex: 1;
     height: 0.4rem;
