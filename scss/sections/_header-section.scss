@@ -22,8 +22,8 @@
 .header-mobile {
     position: fixed;
     bottom: 0;
-    padding: 0 2.7rem;
     display: flex;
+    width: 100vw;
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.5);
     @include desktop {
@@ -35,7 +35,8 @@
 // Header Home buttons mobile
 .header-nav {
     display: flex;
-    column-gap: 2.1rem;
+    justify-content: space-evenly;
+    width: 100%;
     button {
         display: flex;
         flex-direction: column;
