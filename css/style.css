@@ -55,10 +55,23 @@ html {
 
 .header {
   grid-area: header;
-  display: flex;
+  display: none;
   justify-content: space-between;
   padding: 3px 10px;
   background-color: #060606;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+@media (min-width: 500px) {
+  .header {
+    display: flex;
+    justify-content: space-between;
+    padding: 3px 10px;
+    background-color: #060606;
+    position: sticky;
+    top: 0;
+  }
 }
 
 .header-nav {
@@ -115,13 +128,30 @@ html {
     background-color: #060606;
     color: #898989;
     padding: 1.1rem;
+    position: fixed;
     top: 0;
+    left: 0;
+    height: 100vh;
+    flex-direction: column;
+    z-index: 10;
   }
+}
+@media (min-width: 500px) and (min-width: 500px) {
+  .sidebar .sidebar__library-btn {
+    height: 5.4rem;
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+}
+@media (min-width: 500px) {
   .sidebar .sidebar-content {
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 1.1rem;
+    overflow-y: auto;
   }
 }
 
@@ -182,7 +212,6 @@ html {
 button {
   background-color: transparent;
   border: none;
-  cursor: pointer;
   display: flex;
   align-items: center;
 }
@@ -190,77 +219,128 @@ button {
 .control-bar {
   grid-area: control-bar;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   padding: 0.8rem;
-  border-radius: 1rem;
+  padding-bottom: 1.6rem;
+  cursor: pointer;
   background-color: #333842;
+  border-radius: 1rem;
+  position: relative;
+  z-index: 9;
+  bottom: 0.2rem;
+  width: 94%;
+  margin: 0 5px;
 }
 @media (min-width: 500px) {
   .control-bar {
+    position: sticky;
     padding: 2rem;
-    justify-content: space-between;
+    margin: 0;
+    width: 97.5%;
   }
 }
 
+.progress-bar {
+  flex: 1;
+  height: 0.4rem;
+  background: #555;
+  border-radius: 10rem;
+  position: relative;
+  cursor: pointer;
+}
+.progress-bar--mobile {
+  position: absolute;
+  bottom: 0.1rem;
+  left: 0.9rem;
+  right: 0.9rem;
+  height: 0.3rem;
+}
 @media (min-width: 500px) {
-  .control-left {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 0;
+  .progress-bar--mobile {
+    display: none;
   }
-  .control-left .player {
+}
+.progress-bar__fill {
+  height: 100%;
+  width: 35%;
+  background: #E0E0E0;
+  border-radius: 10rem;
+  position: relative;
+}
+.progress-bar__fill::after {
+  content: "";
+  position: absolute;
+  right: -0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1rem;
+  height: 1rem;
+  background: white;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.progress-bar:hover .progress-bar__fill::after {
+  opacity: 1;
+}
+
+.control-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.player {
+  display: flex;
+  gap: 0.5rem;
+}
+.player button {
+  display: none;
+}
+@media (min-width: 500px) {
+  .player button {
     display: flex;
-    gap: 0.5rem;
   }
-  .control-left .player__progress {
+  .player .player__pause {
+    display: flex;
+  }
+}
+
+.player__progress {
+  display: none;
+}
+@media (min-width: 500px) {
+  .player__progress {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    flex: 1;
     padding: 0 1rem;
-  }
-  .control-left .player__progress-line {
-    width: 20rem;
   }
 }
 
 .control-right {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  gap: 1rem;
 }
-
-.player__progress-line-mobile {
-  display: block;
-  width: 97%;
-  position: absolute;
-  top: 6.5rem;
-  left: 0.6rem;
+.control-right .global .player__btn.add-btn {
+  display: flex;
 }
-@media (min-width: 500px) {
-  .player__progress-line-mobile {
-    display: none;
-  }
+.control-right .global .player__btn {
+  display: none;
 }
-
-.player__btn,
-.player__pause {
+.control-right .additions {
   display: none;
 }
 @media (min-width: 500px) {
-  .player__btn,
-  .player__pause {
+  .control-right .global .player__btn {
     display: flex;
   }
-}
-
-.player__progress-line {
-  display: none;
-}
-@media (min-width: 500px) {
-  .player__progress-line {
-    display: block;
+  .control-right .additions {
+    display: flex;
+    gap: 1rem;
   }
 }
 
@@ -268,7 +348,12 @@ button {
   display: flex;
   align-items: center;
   gap: 1rem;
-  position: relative;
+  margin-right: auto;
+}
+@media (min-width: 500px) {
+  .track-meta {
+    flex: 1;
+  }
 }
 
 .track-time {
@@ -306,12 +391,15 @@ button {
 }
 
 .track-picture {
-  width: 5.1rem;
-  height: 5.1rem;
+  width: 4rem;
+  height: 4rem;
   flex-shrink: 0;
 }
-.track-picture-mobile {
-  display: none;
+@media (min-width: 500px) {
+  .track-picture {
+    width: 5.1rem;
+    height: 5.1rem;
+  }
 }
 .track-picture img {
   width: 100%;
@@ -321,17 +409,19 @@ button {
 }
 
 .global {
-  border: none;
+  display: flex;
   margin-right: 0;
 }
 @media (min-width: 500px) {
   .global {
-    display: flex;
     border-right: 0.1rem solid #898989;
     margin-right: 1.5rem;
   }
 }
 
+.additions {
+  display: none;
+}
 @media (min-width: 500px) {
   .additions {
     display: flex;
@@ -383,14 +473,29 @@ body {
   body {
     grid-template-areas: "sidebar header" "sidebar main" "sidebar control-bar";
     grid-template-columns: 25.9rem 1fr;
-    grid-template-rows: auto 1fr auto;
+    grid-template-rows: 5.4rem 1fr #333842;
+    height: 100vh;
+    overflow: hidden;
   }
 }
 
 main {
   grid-area: main;
-  min-height: 0;
-  border: 1px solid #202020;
+}
+@media (min-width: 500px) {
+  main {
+    overflow-y: auto;
+    border: 1px solid #202020;
+    border-radius: 10px;
+    margin-bottom: 5px;
+  }
+}
+
+.card {
+  width: 200px;
+  height: 200px;
+  background-color: #fff;
+  margin: 10px;
   border-radius: 10px;
 }
 
