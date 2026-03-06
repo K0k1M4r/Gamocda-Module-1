@@ -44,18 +44,25 @@ body {
       "sidebar header"
       "sidebar main"
       "sidebar control-bar";
-    grid-template-columns: $sidebar-w 1fr;
-    grid-template-rows: auto 1fr auto;
-    // height: 100vh;
+      grid-template-columns: $sidebar-w 1fr;
+      grid-template-rows: $header-h 1fr $control-bar-bg;
+      height: 100vh;
+      overflow: hidden;
     }
   }
 
 main {
   grid-area: main;
-  min-height: 0;
+  
+  @include desktop {
+  overflow-y: auto;
   border: 1px solid #202020;
   border-radius: 10px;
+  // margin-left: 25px;
+  margin-bottom: 5px;
+  }
 }
+
 
 
 
@@ -65,3 +72,4 @@ main {
 // class="ac"
 // class="title"
 // class="band-name"
+

@@ -4,123 +4,144 @@
 @use '../abstract/variables' as *;
 
 
-// Basic styles
-// body { 
-//     background-color: black; }
-
-
-// koki code
-// added thi in order to push it to side
-footer {
-
-    @include desktop {
-        // display: flex;
-        // justify-content: flex-end;
-    }
-    
-}
-
-// <-- end of koki code
-
-
 button {
     background-color: transparent;
     border: none;
-    cursor: pointer;
     display: flex;
     align-items: center;
 }
 
-// Player controls
+// ── Control bar ──────────────────────────────────────────────────
 .control-bar {
     grid-area: control-bar;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     padding: 0.8rem;
-    // position: relative;
-    // z-index: 5;
-    border-radius: 1rem;
+    padding-bottom: 1.6rem; 
+    cursor: pointer;
     background-color: $control-bar-bg;
+    border-radius: 1rem;
+    position: relative;
+    z-index: 9;
+    bottom: 0.2rem;
+    width: 94%;
+    margin: 0 5px;
 
     @include desktop {
-        
+        position: sticky;
         padding: 2rem;
-        justify-content: space-between;
+        margin: 0;
+        width: 97.5%;
     }
-
-    // @include tablet {
-    //     .control-left{ display: none; }
-    // }
 }
 
-// Left side of the control bar
+// ── Progress-bar ─────────────────────────────────────────────────
+.progress-bar {
+    flex: 1;
+    height: 0.4rem;
+    background: #555;
+    border-radius: 10rem;
+    position: relative;
+    cursor: pointer;
+
+    &--mobile {
+        position: absolute;
+        bottom: 0.1rem;
+        left: 0.9rem;
+        right: 0.9rem;
+        height: 0.3rem;
+
+        @include desktop { display: none; }
+    }
+
+    &__fill {
+        height: 100%;
+        width: 35%;
+        background: #E0E0E0;
+        border-radius: 10rem;
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            right: -0.5rem;  top: 50%;
+            transform: translateY(-50%);
+            width: 1rem;
+            height: 1rem;
+            background: white;
+            border-radius: 50%;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+    }
+
+    &:hover &__fill::after { opacity: 1; }
+}
+
+// ── Left side ────────────────────────────────────────────────────
 .control-left {
+    display: flex;
+    align-items: center;
+    // flex: 1;
+    gap: 1rem;
+
     
-    @include desktop {
+}
+
+.player {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 0;
+        gap: 0.5rem;
 
-        .player { display: flex; gap: 0.5rem; }
+        button { display: none; }
+        
 
-        //Track progress img - desktop
-        .player__progress {
+        @include desktop {
+            button { display: flex; }
+            .player__pause { display: flex; }
+        }
+    }
+
+    .player__progress {
+        display: none;
+
+        @include desktop {
+            
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            flex: 1;
             padding: 0 1rem;
-
-            &-line { width: 20rem; }
         }
     }
-}
 
-//right side of the control bar
+// ── Right side ───────────────────────────────────────────────────
 .control-right {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-}
+    gap: 1rem;
 
-// Track progress img - mobile
-.player__progress-line-mobile {
-    display: block;
-    width: 97%;
-    position: absolute;
-    top: 6.5rem;
-    left: 0.6rem;
+    .global .player__btn.add-btn { display: flex; }
+    .global .player__btn { display: none; }
+    .additions { display: none; }
 
     @include desktop {
-        display: none;
+        // flex: 1;
+        .global .player__btn { display: flex; }
+        .additions { display: flex; gap: 1rem; }
     }
 }
 
-//Player buttons styles
-.player__btn,
-.player__pause {
-    display: none;
-
-    @include desktop {
-        display: flex;
-    }
-}
-
-.player__progress-line { 
-    display: none;
-
-    @include desktop {
-        display: block;
-    }
-}
-
-// Track information styles
+// ── Track info ───────────────────────────────────────────────────
 .track-meta {
     display: flex;
     align-items: center;
     gap: 1rem;
-    position: relative;
+    margin-right: auto;
+
+    @include desktop {
+        flex: 1;
+    }
 }
 
 .track-time {
@@ -145,41 +166,56 @@ button {
         padding-bottom: 2px;
     }
 
-    &-singer { @extend .track-info-title; color: #898989; }
-    &-album  { @extend .track-info-singer; display: none;
+    &-singer {
+        @extend .track-info-title;
+        color: #898989;
+    }
+
+    &-album {
+        @extend .track-info-singer;
+        display: none;
 
         @include desktop { display: block; }
     }
 }
 
 .track-picture {
-    width: 5.1rem;
-    height: 5.1rem;
+    width: 4rem;
+    height: 4rem;
     flex-shrink: 0;
 
-    &-mobile { display: none; }
+    @include desktop {
+        width: 5.1rem;
+        height: 5.1rem;
+    }
 
-    img { width: 100%; height: 100%; object-fit: cover; border-radius: 0.4rem; }
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 0.4rem;
+    }
 }
 
-// Global button styles
+// ── Buttons ──────────────────────────────────────────────────────
 .global {
-    border: none;
+    display: flex;
     margin-right: 0;
 
     @include desktop {
-        display: flex;
         border-right: 0.1rem solid #898989;
         margin-right: 1.5rem;
     }
 }
 
 .additions {
+    display: none;
+
     @include desktop {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
 }
 
 .player__ai {
@@ -190,7 +226,12 @@ button {
         width: 4rem;
         flex-shrink: 0;
 
-        img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+        img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
     }
 }
 
@@ -200,4 +241,6 @@ button {
     display: inline-block;
 
     @include desktop { display: none; }
+
 }
+

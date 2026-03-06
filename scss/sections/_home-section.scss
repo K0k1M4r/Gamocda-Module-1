@@ -195,8 +195,10 @@
 
 .home-mix-card-list {
     display: flex;
-    column-gap: 9px;
+    column-gap: 0.9rem;
     margin-bottom: 3rem;
+    width: 100%;           
+    flex-wrap: wrap;
     
     
 }  
