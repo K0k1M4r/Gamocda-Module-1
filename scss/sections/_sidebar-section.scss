@@ -24,7 +24,18 @@
             max-width: 23rem;
             
 
+        .sidebar__library-btn{
+
+            @include desktop {
+                height: $header-h;
+                display: flex;
+                align-items: center;
+                width: 100%;
+            }
+        }
+
         .sidebar-content{
+            flex: 1;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
