@@ -26,16 +26,17 @@
     justify-content: space-between;
     margin-bottom: 2.2rem;
     
-    div {
+   ul {
         display: flex;
-        column-gap: 10px;
-    }
-    button {
+        column-gap: 1rem;
+   } 
+    li button {
+        display: flex;
         @include music-audio-filter-button();
         font-size: 12px;
         font-weight: 400;
     }
-    button:nth-child(1) {
+    li:first-child button {
         display: none;
     }
 }
@@ -50,19 +51,25 @@
         justify-content: space-between;
         margin-bottom: 1.6rem;
 
-    div {
-        display: flex;
-        column-gap: 1rem;
-    }
+            ul {
+                display: flex;
+                column-gap: 1rem;
+                
+            
+            button{
+                display: flex; 
+                @include music-audio-filter-button(); 
+            }
 
-    button:nth-child(1) {
-        display: flex;
-        background-color: $header-text-color;
-        color: #111111;
-    }
-    button {
-        @include music-audio-filter-button()
-    }
+            li:first-child button {
+                background-color: $header-text-color;
+                color: #111111;
+            }
+            
+        }
+
+   
+    
     
     }
 }

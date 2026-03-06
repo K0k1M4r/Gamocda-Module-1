@@ -52,7 +52,7 @@ button {
         left: 0.9rem;
         right: 0.9rem;
         height: 0.3rem;
-
+        width: 96%;
         @include desktop { display: none; }
     }
 
