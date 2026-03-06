@@ -3,9 +3,6 @@
 @use '../abstract/responsive' as *;
 @use '../abstract/_variables.scss' as *;
 
-// .sidebar{ //main container for sidebar
-//         display:none; 
-
 
 .sidebar{
         grid-area: sidebar;
@@ -14,25 +11,25 @@
         @include desktop{
             
             display: flex;
-            // background-color: red;
             background-color: $main-bg-dark;
             color: $font-fg-secondary;
-
-            width: 25.9rem;
             height: 100vh;
-
-            // width: $sidebar-w;
+            width: $sidebar-w;
             padding: 1.1rem;
             // position: sticky;
             top: 0; 
             // z-index: 5;
+            box-sizing: border-box;
             
 
         .sidebar-content{
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            gap: 1.1rem;
+            gap: 1.1rem;  
+            list-style: none; 
+            padding: 0;
+            width: 100%;
         }
     }
 }
@@ -45,11 +42,13 @@
     flex:none;
     transition: all 0.3s ease;
     cursor:pointer;
+    
 
       &:hover {
         background-color: $hover-bg;
+        color: $font-fg-primary;
 
-        .item-label .sidebar-arrow{
+        .sidebar-arrow{
             color: $font-fg-primary;
         }
 
@@ -93,5 +92,6 @@
         height: 4rem;
         flex:none;
         color: $font-fg-secondary;
+        margin-left: auto;
     }
 }
