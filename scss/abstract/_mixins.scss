@@ -3,7 +3,7 @@
 
 
 @mixin music-audio-filter-button() {
-    color: $header-text-color;
+    color: $font-fg-primary;
         background-color: #202020;
         border: none;
         font-size: 1.4rem;
@@ -41,7 +41,7 @@
         padding-bottom: 0.8rem;
             h3 {
              font-weight: 500;
-             color: $header-text-color; 
+             color: $font-fg-primary; 
                 }
             span { 
                 font-weight: 400; 
@@ -120,7 +120,7 @@
         padding-bottom: 0.664rem;
             h3 {
              font-weight: 500;
-             color: $header-text-color; 
+             color: $font-fg-primary; 
                 }
             span { 
                 font-weight: 400; 
