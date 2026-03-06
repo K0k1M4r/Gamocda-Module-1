@@ -22,9 +22,9 @@ button {
     cursor: pointer;
     background-color: $control-bar-bg;
     border-radius: 1rem;
-    position: relative;
-    z-index: 9;
-    bottom: 0.2rem;
+    position: sticky;
+    z-index: 100;
+    bottom: 9.5rem;
     width: 94%;
     margin: 0 5px;
 
@@ -33,6 +33,7 @@ button {
         padding: 2rem;
         margin: 0;
         width: 97.5%;
+        bottom: 0;
     }
 }
 
