@@ -214,6 +214,11 @@
     }
 
     .sidebar-item {
+        border: none;
+        font: inherit;
+        color: inherit;
+        cursor: pointer;
+        
         display: flex;
         flex-direction: row;
         align-items: center;

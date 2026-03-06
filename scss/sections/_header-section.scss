@@ -73,6 +73,7 @@
     @include desktop {
         display: flex; 
         align-items: center; 
+        gap:1rem;
 
         ul {
             @include flex-center;
@@ -85,23 +86,32 @@
         li {
             @include sidebar-item; 
             width: 21rem; 
-        }
+            height: 4.04rem;
 
-        button {
-            display: flex;
-            justify-content: left;
-            flex-direction: row;
-            width: 100%;
-            height: 100%; 
-            padding: 0.7rem 1.5rem;
-            cursor: pointer;
-            color: $font-fg-secondary;
-            background: transparent;
-            border: none;
+            &.active {
+                background-color: $hover-bg;
+                
+                button {
+                    color: $font-fg-primary;
+                }
+            }
+
+            button {
+                display: flex;
+                justify-content: left;
+                flex-direction: row;
+                width: 100%;
+                height: 100%; 
+                padding: 0.7rem 1.5rem;
+                cursor: pointer;
+                color: $font-fg-secondary;
+                background: transparent;
+                border: none;
+                
             
-        
-            &:hover {
-                color: $font-fg-primary;
+                &:hover {
+                    color: $font-fg-primary;
+                }
             }
         }
     }
