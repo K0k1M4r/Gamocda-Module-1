@@ -198,6 +198,7 @@
     flex: none;
     transition: all 0.3s ease;
     cursor: pointer;
+    max-width: 26rem;
 
     &:hover {
         background-color: $hover-bg;
@@ -213,6 +214,11 @@
     }
 
     .sidebar-item {
+        border: none;
+        font: inherit;
+        color: inherit;
+        cursor: pointer;
+        
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -230,7 +236,7 @@
         img {
             width: 1.92rem;
             height: 1.92rem;
-            border: 0.232rem solid $font-fg-secondary;
+            // border: 0.232rem solid $font-fg-secondary;
         }
     }
 
@@ -239,12 +245,5 @@
         line-height: 100%;
         letter-spacing: 3%;
     }
-
-    .sidebar-arrow {
-        width: 4rem;
-        height: 4rem;
-        flex: none;
-        color: $font-fg-secondary;
-        margin-left: auto;
-    }
 }
+
