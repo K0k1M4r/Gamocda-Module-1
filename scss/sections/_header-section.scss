@@ -46,7 +46,11 @@
 // Header Home buttons mobile
 .header-nav {
     display: flex;
-    column-gap: 2.1rem;
+    
+    ul {
+        display: flex;
+        column-gap: 2.1rem;
+    }
     button {
         display: flex;
         flex-direction: column;
@@ -65,7 +69,7 @@
 }
 
 
-// Header Home button,
+// Header Home buttons and search desctop
 .header-nav {
     
     @include desktop {
@@ -83,8 +87,8 @@
         
     button {
         display: flex;
-        flex-direction:row;
-        align-items: center;
+        flex-direction: row;
+        justify-content: flex-start;
         padding: 0.7rem 1.5rem;
         flex: 1;
         min-width: 0;

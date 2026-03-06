@@ -2,6 +2,17 @@
 @use '../abstract/variables' as *; 
 
 
+@mixin flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-between{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
 
 @mixin music-audio-filter-button() {
@@ -176,4 +187,64 @@
 
 
    
+}
+
+
+@mixin sidebar-item {
+    @include flex-between;
+    align-items: center;
+    width: 100%;
+    border-radius: 1rem;
+    flex: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $hover-bg;
+        color: $font-fg-primary;
+
+        .sidebar-arrow {
+            color: $font-fg-primary;
+        }
+
+        .icon img {
+            border-color: $font-fg-primary;
+        }
+    }
+
+    .sidebar-item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 1rem;
+        height: 100%;
+    }
+
+    .icon {
+        @include flex-center;
+        width: 4.04rem;
+        height: 4.04rem;
+        border-radius: 0.2rem;
+        flex: none;
+
+        img {
+            width: 1.92rem;
+            height: 1.92rem;
+            border: 0.232rem solid $font-fg-secondary;
+        }
+    }
+
+    .item-label {
+        font-size: 1.4rem;
+        line-height: 100%;
+        letter-spacing: 3%;
+    }
+
+    .sidebar-arrow {
+        width: 4rem;
+        height: 4rem;
+        flex: none;
+        color: $font-fg-secondary;
+        margin-left: auto;
+    }
 }

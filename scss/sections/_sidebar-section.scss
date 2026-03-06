@@ -14,6 +14,17 @@
             display: flex;
             background-color: $main-bg-dark;
             color: $font-fg-secondary;
+
+            height: 100vh;
+            width: $sidebar-w;
+            padding: 1.1rem;
+            // position: sticky;
+            top: 0; 
+            // z-index: 5;
+            box-sizing: border-box;
+            width: 100%;
+            max-width: 23rem;
+
             // width: 100%;
             padding: 1.1rem;
             // position: fixed;
@@ -21,6 +32,7 @@
             height: 100vh;
             flex-direction: column;
             // z-index: 0;
+
             
 
         .sidebar__library-btn{
@@ -38,38 +50,37 @@
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            gap: 1.1rem;
-            overflow-y: auto;
+            gap: 1.1rem;  
+            list-style: none; 
+            padding: 0;
+            width: 100%;
         }
     }
 }
 
 .sidebar-items{
-    display:flex;
-    flex-direction: row;
-    justify-content: space-between;
+    @include flex-between;
     align-items: center;
     width: 100%;
     border-radius: 1rem;
     flex:none;
     transition: all 0.3s ease;
+    cursor:pointer;
+    
 
       &:hover {
         background-color: $hover-bg;
+        color: $font-fg-primary;
 
-        .item-label {
+        .sidebar-arrow{
             color: $font-fg-primary;
         }
 
         .icon img {
             border-color: $font-fg-primary;
         }
-
-        .sidebar-arrow {
-            color: $font-fg-primary;
-        }
     }
-    
+
 
     .sidebar-item{
         display: flex;
@@ -84,8 +95,7 @@
         width: 4.041081619262695rem;
         height: 4.041081619262695rem;
         border-radius: 0.2rem;
-        display: flex;
-        justify-content: center;
+        @include flex-center;
         flex:none;
 
         img{
@@ -106,5 +116,6 @@
         height: 4rem;
         flex:none;
         color: $font-fg-secondary;
+        margin-left: auto;
     }
 }
