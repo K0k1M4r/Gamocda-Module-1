@@ -1,16 +1,8 @@
-// mixins used in sidebar section
-@mixin flex-center{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+<<<<<<< HEAD
+=======
+@use '../abstract/variables' as *; 
 
-@mixin flex-between{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
+>>>>>>> feat/Home
 
 
 @mixin music-audio-filter-button() {

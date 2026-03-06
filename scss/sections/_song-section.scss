@@ -3,3 +3,11 @@
 @use '../abstract/responsive' as *;
 @use '../abstract/_variables.scss' as *;
 
+// @mixin flex($gap:0, $align:center, $justify:flex-start){
+//     display: flex;
+//     gap: gap;
+//     align-items: $align;
+//     justify-content: $justify;
+// }
+
+.player-container{}

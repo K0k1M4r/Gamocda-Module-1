@@ -1,64 +1,136 @@
 @use '../abstract/mixins' as *;
 @use '../universal components/components' as *;
 @use '../abstract/responsive' as *;
+@use '../abstract/variables' as *;
 
 
+// Basic styles
+// body { 
+//     background-color: black; }
 
-body {
-    background-color: black;
+
+// koki code
+// added thi in order to push it to side
+footer {
+
+    @include desktop {
+        // display: flex;
+        // justify-content: flex-end;
+    }
+    
 }
+
+// <-- end of koki code
 
 
 button {
     background-color: transparent;
     border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
 }
 
-.player__progress-line-mobile {
-    display: none;
-}
-
+// Player controls
 .control-bar {
-    border-radius: 10px;
-    background-color: #333842;
+    grid-area: control-bar;
     display: flex;
-    padding: 20px;
     justify-content: space-between;
-    min-width: 290px;
+    align-items: center;
+    padding: 0.8rem;
+    // position: relative;
+    // z-index: 5;
+    border-radius: 1rem;
+    background-color: $control-bar-bg;
+
+    @include desktop {
+        
+        padding: 2rem;
+        justify-content: space-between;
+    }
+
+    // @include tablet {
+    //     .control-left{ display: none; }
+    // }
 }
 
+// Left side of the control bar
 .control-left {
+    
+    @include desktop {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0;
+
+        .player { display: flex; gap: 0.5rem; }
+
+        //Track progress img - desktop
+        .player__progress {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0 1rem;
+
+            &-line { width: 20rem; }
+        }
+    }
+}
+
+//right side of the control bar
+.control-right {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 0px;
+}
 
-    .player {
+// Track progress img - mobile
+.player__progress-line-mobile {
+    display: block;
+    width: 97%;
+    position: absolute;
+    top: 6.5rem;
+    left: 0.6rem;
+
+    @include desktop {
+        display: none;
+    }
+}
+
+//Player buttons styles
+.player__btn,
+.player__pause {
+    display: none;
+
+    @include desktop {
         display: flex;
-        gap: 5px;    
-    }
-
-    .player__progress {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    padding: 0px 10px;
-
-    &-line {
-        width: 200px;
-    }
     }
 }
 
-.track-time {
-    color: #898989;
-    font-size: 12px;
+.player__progress-line { 
+    display: none;
+
+    @include desktop {
+        display: block;
+    }
 }
 
+// Track information styles
 .track-meta {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 1rem;
+    position: relative;
+}
+
+.track-time {
+    display: none;
+
+    @include desktop {
+        display: block;
+        color: #898989;
+        font-size: 1.2rem;
+    }
 }
 
 .track-info {
@@ -66,123 +138,66 @@ button {
     flex-direction: column;
 
     &-title {
-        font-size: 14px;
+        font-size: 1.4rem;
         font-weight: 400;
         letter-spacing: 3%;
         color: #E0E0E0;
+        padding-bottom: 2px;
     }
 
-    &-singer {
-        @extend .track-info-title;
-        color: #898989;
-    }
+    &-singer { @extend .track-info-title; color: #898989; }
+    &-album  { @extend .track-info-singer; display: none;
 
-    &-album {
-        @extend .track-info-singer;
+        @include desktop { display: block; }
     }
 }
 
 .track-picture {
-        width: 51px;
-        height: 51px;
-        flex-shrink: 0;
+    width: 5.1rem;
+    height: 5.1rem;
+    flex-shrink: 0;
 
-        &-mobile {
-            display: none;
-        }
+    &-mobile { display: none; }
 
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; 
-            border-radius: 4px;
-        }
-    }
-
-.control-right {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    img { width: 100%; height: 100%; object-fit: cover; border-radius: 0.4rem; }
 }
 
+// Global button styles
 .global {
-    border-right: 1px solid #898989;
-    margin-right: 15px;
+    border: none;
+    margin-right: 0;
+
+    @include desktop {
+        display: flex;
+        border-right: 0.1rem solid #898989;
+        margin-right: 1.5rem;
+    }
+}
+
+.additions {
+    @include desktop {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
 }
 
 .player__ai {
-    width: 40px;
-    flex-shrink: 0;
+    display: none;
 
-        img {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            object-fit: cover; 
+    @include desktop {
+        display: flex;
+        width: 4rem;
+        flex-shrink: 0;
+
+        img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
     }
 }
 
-.add-btn {
-    display: inline-block;
-}
+.add-btn { display: inline-block; }
 
 .responsive-play-btn {
-    display: none;
-}
+    display: inline-block;
 
-@media (max-width: 1299px) {
-
-    .player__btn, .player__ai, .player__pause, .player__progress-line, .track-time, .track-info-album {
-        display: none;
-    }
-
-    .track-meta {
-        position: relative;
-    }
-
-    .player__progress-line-mobile {
-        display: flex;
-        width: 97%;
-        position: absolute;
-        top: 88px;
-        left: 6px;
-    }
-    
-}
-
-
-@media (max-width: 500px) {
-
-    .player__btn, .player__ai, .player__pause, .player__progress-line, .track-time, .track-info-album {
-        display: none;
-    }
-
-    .control-bar {
-        padding: 8px 8px;
-    }
-
-    .track-meta {
-        position: relative;
-    }
-
-    .player__progress-line-mobile {
-        display: block;
-        width: 97%;
-        position: absolute;
-        top: 65px;
-        left: 6px;
-    }
-
-    .add-btn {
-        display: inline-block;
-    }
-
-    .responsive-play-btn {
-        display: inline-block;
-    }
-    
-    .global {
-        border: none;
-        margin-right: 0;
-}
+    @include desktop { display: none; }
 }

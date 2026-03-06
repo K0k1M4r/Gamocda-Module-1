@@ -3,17 +3,30 @@
 @use '../abstract/responsive' as *;
 @use '../abstract/_variables.scss' as *;
 
-.sidebar{ //main container for sidebar
-        display:none; 
+// .sidebar{ //main container for sidebar
+//         display:none; 
+
+
+.sidebar{
+        grid-area: sidebar;
+        display:none;
 
         @include desktop{
-            display: block;
+            
+            display: flex;
+            // background-color: red;
             background-color: $main-bg-dark;
             color: $font-fg-secondary;
+
             width: 25.9rem;
             height: 100vh;
+
+            // width: $sidebar-w;
             padding: 1.1rem;
-            position: relative;
+            // position: sticky;
+            top: 0; 
+            // z-index: 5;
+            
 
         .sidebar-content{
             display: flex;
@@ -52,6 +65,7 @@
         align-items: center;
         gap:1rem;
         height: 100%;
+
     }
 
     .icon{
