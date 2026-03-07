@@ -2376,66 +2376,122 @@ html {
   }
 }
 
-.home-mix-card-container {
+.search-card-x-doublelayer-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
   max-width: 17rem;
   padding-top: 1rem;
   padding-bottom: 0.8rem;
 }
-.home-mix-card-container .card-text {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: #898989;
-  line-height: 100%;
-}
-.home-mix-card-container .card-text p {
-  font-size: 1.2rem;
-}
-.home-mix-card-container .card-text-header {
-  display: flex;
-  justify-content: space-between;
-  min-width: 100%;
-  font-size: 1.4rem;
-  padding-top: 0.605rem;
-  padding-bottom: 0.8rem;
-}
-.home-mix-card-container .card-text-header h3 {
-  font-weight: 500;
-  color: #E0E0E0;
-}
-.home-mix-card-container .card-text-header span {
-  font-weight: 400;
-  color: #111111;
-}
-.home-mix-card-container .home-mix-card-image-container {
+.search-card-x-doublelayer-container .x-card-image-container {
   display: grid;
   place-items: end center;
   align-items: center;
+  margin-bottom: 0.61rem;
 }
-.home-mix-card-container .home-mix-card-image-container .home-mix-card-image, .home-mix-card-container .home-mix-card-image-container .x-cont {
+.search-card-x-doublelayer-container .x-card-image-container .x-card-image, .search-card-x-doublelayer-container .x-card-image-container .x-mark-cont, .search-card-x-doublelayer-container .x-card-image-container .x-card-layer {
   grid-area: 1/1;
 }
-.home-mix-card-container .home-mix-card-image-container .home-mix-card-image {
+.search-card-x-doublelayer-container .x-card-image-container .x-card-image {
   height: 17rem;
   width: 17rem;
   z-index: 20;
   border-radius: 0.725rem;
   box-shadow: 0 -1rem 1rem -1.3rem rgba(0, 0, 0, 0.5);
 }
-.home-mix-card-container .home-mix-card-image-container .x-cont {
+.search-card-x-doublelayer-container .x-card-image-container .x-mark-cont {
   background-color: #111111;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 30;
   border-radius: 50%;
-  transform: translateY(-7.6rem) translateX(5rem);
+  transform: translateY(-7.15rem) translateX(6.4rem);
   background-color: #111111;
   height: 4.0411rem;
   width: 4.0411rem;
+}
+.search-card-x-doublelayer-container .x-card-image-container .x-card-layer {
+  display: flex;
+  background-color: rgba(98, 120, 177, 0.3019607843);
+  width: 14.6489rem;
+  height: 15rem;
+  border-radius: 0.732rem;
+  transform: translateY(-1.6rem);
+}
+.search-card-x-doublelayer-container .doublelayer-x-card-text {
+  display: flex;
+  flex-direction: column;
+  color: #898989;
+  line-height: 100%;
+  row-gap: 0.786rem;
+}
+.search-card-x-doublelayer-container .doublelayer-x-card-text p {
+  font-size: 1.2rem;
+}
+.search-card-x-doublelayer-container .doublelayer-x-card-text-header {
+  font-size: 1.4rem;
+  padding-top: 0.605rem;
+  padding-bottom: 0.8rem;
+}
+.search-card-x-doublelayer-container .doublelayer-x-card-text-header h3 {
+  font-weight: 500;
+  color: #E0E0E0;
+}
+
+.card-inside-image-container {
+  color: #FFFFFF;
+  height: 17rem;
+  width: 17rem;
+  background-color: #1E3264;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr;
+  padding-top: 2rem;
+  padding-left: 2rem;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+.card-inside-image-container .card-inside-image-text {
+  line-height: 260%;
+}
+.card-inside-image-container .card-inside-image-text h3 {
+  font-weight: 900;
+  font-size: 20px;
+}
+.card-inside-image-container img {
+  width: 10.427rem;
+  height: 10.427rem;
+  grid-area: 2;
+  transform: translateY(-3.1rem) translateX(7.2rem);
+  rotate: 30deg;
+  border-radius: 0.5rem;
+}
+
+.search-card-pin-doublelayer-container {
+  display: grid;
+}
+.search-card-pin-doublelayer-container .pin-mark-cont, .search-card-pin-doublelayer-container .pin-icon {
+  grid-area: 1/1;
+}
+.search-card-pin-doublelayer-container .pin-card-image-cont {
+  background-color: #3D3D3D;
+  width: 17rem;
+  height: 17rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search-card-pin-doublelayer-container .pin-mark-cont {
+  background-color: #111111;
+  height: 4.0411rem;
+  width: 4.0411rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transform: translateY(0.4rem) translateX(0.4rem);
+  z-index: 100;
 }
 
 body {
