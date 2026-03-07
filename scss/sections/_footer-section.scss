@@ -49,6 +49,10 @@ button {
     border-radius: 10rem;
     position: relative;
     cursor: pointer;
+    
+    
+    @include desktop { width: 20vw; min-width: 10rem; }
+    
 
     &--mobile {
         position: absolute;
@@ -145,7 +149,9 @@ button {
     margin-right: auto;
 
     @include desktop {
-        flex: 1;
+        // flex: 1;
+        margin-right: 0;
+        justify-content: center;
     }
 }
 
