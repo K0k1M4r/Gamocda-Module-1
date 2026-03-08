@@ -361,3 +361,249 @@
     }
 } 
 
+
+
+
+
+@mixin search-card-pin-tripplelayer() {
+    display: flex;
+    flex-direction: column;
+    max-width: 17rem;
+
+    .pin-tripplelayer-card-image-container {
+        display: grid;
+        place-items: center;
+    }
+
+    .pin-mark-cont, 
+    .pin-icon, 
+    .pin-card-layer1,
+    .pin-card-layer2,
+    .pin-card-image-cont{
+        grid-area: 1 / 1;
+           
+    }
+    .pin-card-image-cont {
+        background-color: #3D3D3D;
+        width: 17rem;
+        height: 17rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0.725rem;
+        z-index: 50;
+    }
+
+    
+    .pin-mark-cont {
+        background-color: $Bg-Primary;
+        height: 4.0411rem;
+        width: 4.0411rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        transform: translateY(-7.7rem) translateX(6.5rem);
+        z-index: 100;
+    }
+
+    .pin-card-layer1 {
+        background-color: #353535;
+        height: 17rem;
+        width: 15.4rem;
+        z-index: 10;
+        transform: translateY(-0.5rem);
+        border-radius: 0.725rem;
+    }
+    
+    .pin-card-layer2 {
+        background-color: #272727;
+        height: 17rem;
+        width: 13.3rem;
+        transform: translateY(-1.0rem);
+        border-radius: 0.725rem;
+        z-index: 0;
+    }
+
+
+
+     .tripplelayer-pin-card-text-header {
+        display: flex;
+        justify-content: space-between;
+        min-width: 100%;
+        font-size: 1.4rem;
+        padding-top: 0.605rem;
+        padding-bottom: 0.8rem;
+            h3 {
+             font-weight: 500;
+             color: $font-fg-primary; 
+                }
+            span { 
+                font-weight: 400; 
+                color: $font-fg-secondary; 
+        }
+    }
+
+
+    .tripplelayer-pin-card-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #898989;
+        line-height: 130%;
+        p {
+             font-size: 1.2rem;
+        }
+    }
+
+}
+
+
+
+@mixin search-card-pin () {
+    display: flex;
+    flex-direction: column;
+    max-width: 17rem;
+
+    .pin-card-image-container {
+        display: grid;
+        place-items: center;
+    }
+
+    .pin-mark-cont, 
+    .pin-icon, 
+    .pin-card-image-cont,
+    .pin-image{
+        grid-area: 1 / 1;
+           
+    }
+    .pin-image {
+        background-color: #3D3D3D;
+        width: 17rem;
+        height: 17rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0.725rem;
+        z-index: 50;
+        
+    }
+
+    
+    .pin-mark-cont {
+        background-color: $Bg-Primary;
+        height: 4.0411rem;
+        width: 4.0411rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        transform: translateY(-6.7rem) translateX(6.5rem);
+        z-index: 100;
+    }
+
+     .pin-card-text-header {
+        display: flex;
+        justify-content: space-between;
+        min-width: 100%;
+        font-size: 1.4rem;
+        padding-top: 0.605rem;
+        padding-bottom: 0.8rem;
+            h3 {
+             font-weight: 500;
+             color: $font-fg-primary; 
+                }
+            
+    }
+
+
+    .tripplelayer-pin-card-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #898989;
+        line-height: 130%;
+        p {
+             font-size: 1.2rem;
+        }
+    }
+}
+
+@mixin search-card-pin-doublelayer($theme-color: #353535) {
+    display: flex;
+    flex-direction: column;
+    max-width: 17rem;
+
+    .pin-doublelayer-card-image-container {
+        display: grid;
+        place-items: center;
+    }
+
+    .pin-mark-cont, 
+    .pin-icon, 
+    .pin-card-layer1,
+    .pin-image{
+        grid-area: 1 / 1;
+           
+    }
+    .pin-image {
+        background-color: #3D3D3D;
+        width: 17rem;
+        height: 17rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 0.725rem;
+        z-index: 50;
+    }
+
+    
+    .pin-mark-cont {
+        background-color: $Bg-Primary;
+        height: 4.0411rem;
+        width: 4.0411rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        transform: translateY(-7.0rem) translateX(6.5rem);
+        z-index: 100;
+    }
+
+    .pin-card-layer1 {
+        background-color: $theme-color;
+        height: 17rem;
+        width: 15.4rem;
+        z-index: 10;
+        transform: translateY(-0.5rem);
+        border-radius: 0.725rem;
+    }
+
+     .doublelayer-pin-card-text-header {
+        display: flex;
+        justify-content: space-between;
+        min-width: 100%;
+        font-size: 1.4rem;
+        padding-top: 0.605rem;
+        padding-bottom: 0.8rem;
+            h3 {
+             font-weight: 500;
+             color: $font-fg-primary; 
+                }
+            span { 
+                font-weight: 400; 
+                color: $font-fg-secondary; 
+        }
+    }
+
+
+    .doublelayer-pin-card-text {
+        display: flex;
+        flex-direction: column;
+        color: #898989;
+        line-height: 130%;
+        p {
+             font-size: 1.2rem;
+        }
+    }
+}
