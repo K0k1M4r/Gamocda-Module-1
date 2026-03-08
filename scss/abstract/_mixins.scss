@@ -247,3 +247,35 @@
     }
 }
 
+// ── Most commonly used text ───────────────────────────────────────────────────
+@mixin primary-text (   
+                    $font-size: 1.4rem, 
+                    $font-weight: 400, 
+                    $color: $font-fg-primary,
+                    $line-height: 100%,
+                    $letter-spacing: 3%
+                    ) 
+    {
+    color: $color;
+    font-size: $font-size;
+    font-weight: $font-weight;
+    line-height: $line-height;
+    letter-spacing: $letter-spacing;
+    }
+
+
+    // ── Most commonly used title (song names etc. ───────────────────────────────────────────────────
+    @mixin primary-title (   
+                    $font-size: 1.6rem, 
+                    $font-weight: 500, 
+                    $color: $header-text-color,
+                    $line-height: 100%,
+                    $letter-spacing: 3%
+                    ) 
+    {
+    color: $color;
+    font-size: $font-size;
+    font-weight: $font-weight;
+    line-height: $line-height;
+    letter-spacing: $letter-spacing;
+    }
