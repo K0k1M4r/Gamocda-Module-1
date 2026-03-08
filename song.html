@@ -1,102 +1,184 @@
-<!-- Main section -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>now playing</title>
+    <link rel="stylesheet" href="./assets/fonts/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
 
-     <main class="player-container">
-        <div class="blured-backgound"></div>
+<body>
+    <!--mobile player--> 
+    <!-- Main section -->
 
-        <div class="songpage-wrapper">
+    <main class="now-playing">
+        <div class="now-playing-container">
+            <div class="blured-backgound"></div>
 
-            <header class="track-header">
-                <div class="album-pic">
-                    <img src="assets/images/imgs/btr.png" alt="btr album photo">
+            <div class="songpage-wrapper">
+
+                <header class="track-header">
+                    <div class="mobile-header hide-desktop">
+                        <button class="icon-btn">
+                                <img src="assets/images/Icons-small/Property 1=Down.svg" alt=" icon">
+                        </button>
+                        
+                        <div class="mobile-header-center">
+                            <img src="assets/images/Icons-small/Property 1=Album.svg" alt="album icon">
+                            <span class="mobile-header-text">Elevate</span>
+                        </div>
+
+                    </div>
+
+                    <div class="album-pic">
+                        <img src="assets/images/imgs/btr.png" alt="btr album photo">
+                    </div>
+
+                    <div class="track-info">
+                        <div class="title-row">
+                            <div class="text-group">
+                                <h1 class="track-title">Windows down</h1>
+
+                                <div class="icons">
+                                    <button class="icon-btn hide-desktop">
+                                        <img src="assets/images/Icons-small/Property 1=Like.svg" alt="like icon">
+                                    </button>
+
+                                    <button class="icon-btn hide-desktop">
+                                        <img src="assets/images/Icons-small/Property 1=Add to Playlist.svg" alt="add to album icon">
+                                    </button>
+                                </div>
+                            </div>
+                            <h2 class="track-title2">Big Time Rush</h2>
+                        </div>
+                    
+
+                        <div class="info-row hide-mobile">
+                            <span class="artist-name"><img class="info-icon" src="assets/images/Icons-large/Name=Artist, Filled=No.svg" alt="artist icon"> Big Time Rush</span>
+                            <span class="dot"></span>
+                            <span class="album-name"><img class="info-icon" src="assets/images/Icons-large/Name=Album, Filled=No.svg" alt="album icon">Elevate</span>
+                            <span class="dot"></span>
+                            <span class="adt-info">2011</span> 
+                            <span class="dot"></span>
+                            <span class="adt-info">4:59</span>
+                            <span class="dot"></span>
+                            <span class="adt-info">2,659,263</span>
+                            <span class="dot"></span>
+                        </div>
+
+                        <ul class="icon-bar hide-mobile">
+                            <li>
+                                <button class="icon-btn">
+                                    <img src="assets/images/Icons-large/Name=Play, Filled=No.svg" alt="playing">
+                                </button>
+                            </li>
+
+                            <li>
+                                <button class="icon-btn">
+                                    <img src="assets/images/Icons-large/Name=Like, Filled=No.svg" alt="like">
+                                </button>
+                            </li>
+
+                            <li>
+                                <button class="icon-btn">
+                                    <img src="assets/images/Icons-large/Name=Playlist, Filled=No.svg" alt="playlist">
+                                </button>
+                            </li>
+
+                            <li>
+                                <button class="icon-btn">
+                                    <img src="assets/images/Icons-large/Name=Add to Queue, Filled=No.svg" alt="add to queue">
+                                </button>
+                            </li>
+
+                            <li>
+                                <button class="icon-btn">
+                                    <img src="assets/images/Icons-large/Name=Download, Filled=No.svg" alt="download">
+                                </button>
+                            </li>
+
+                            <li>
+                                <button class="icon-btn">
+                                    <img src="assets/images/Icons-large/Name=Share, Filled=No.svg" alt="share">
+                                </button>
+                            </li>
+
+                            <li>
+                                <button class="icon-btn">
+                                    <img src="assets/images/Icons-large/Name=More, Filled=No.svg" alt="more">
+                                </button>
+                            </li>
+
+                            <li>
+                                <button class="icon-bar-desktop">
+                                    <img src="">
+                                </button>
+                            </li>
+                        </ul>
+
+                        <ul class="genres hide-mobile">
+                            <li class="genre">Funk</li>
+                            <li class="genre">Electronic music</li>
+                            <li class="genre">Disco</li>
+                            <li class="genre">Soft Rock</li>
+                            <li class="genre">Progressive pop</slipan>
+                        </ul>
+
+
+                        <ul class="artist-list hide-mobile">
+                            <li class="sub-artist">
+                                <img class="img-subartist" src="assets/images/imgs/james.png" alt="james maslow" >
+                                <div class="names">
+                                    <p class="name">James Maslow</p>
+                                    <p class="role">Main artist</p>
+                                </div>
+                            </li>
+
+                            <li class="sub-artist">
+                                <img class="img-subartist" src="assets/images/imgs/carlos.png" alt="carlos" >
+                                <div class="names">
+                                    <p class="name">Carlos PenaVega</p>
+                                    <p class="role">Main artist, Lyricist</p>
+                                </div>
+                            </li>
+
+                            <li class="sub-artist">
+                                <img class="img-subartist" src="assets/images/imgs/kendal.png" alt="Kendal" >
+                                <div class="names">
+                                    <p class="name">Kendal Schmidt</p>
+                                    <p class="role">Main artist, Composer</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </header>
+                
+
+                <footer class="player__progress hide-desktop">
+                    <time class="track-time">2:23</time>
+
+                        <div class="progress-bar">
+                            <div class="progress-bar__fill"></div>
+                        </div>
+
+                    <time class="track-time">-0:45</time>
+                </footer>
+
+        
+                <div class="player-row hide-desktop">
+                    <button class="player__btn"><img src="assets/images/Icons-small/Property 1=Shuffle.svg" alt="shuffle"></button>
+                    <button class="player__btn"><img src="assets/images/Icons-small/Property 1=Prev.svg" alt="Previous"></button>
+                    <button class="player__btn"><img src="assets/images/Icons-small/Property 1=Pause Simple.svg" alt="pause"></button>
+                    <button class="player__btn"><img src="assets/images/Icons-small/Property 1=Next.svg" alt="next"></button>
+                    <button class="player__btn"><img src="assets/images/Icons-small/Property 1=Loop.svg" alt="Loop"></button>
                 </div>
 
-                <div class="track-info">
-                    <h1 class="track-title">No idea</h1>
+            </div>
 
-                    <div class="info-row">
-                        <span class="artist-name"><img class="info-icon" src="assets/images/Icons-large/Name=Artist, Filled=No.svg" alt="artist icon"> Big Time Rush</span>
-                        <span class="dot"></span>
-                        <span class="album-name"><img class="info-icon" src="assets/images/Icons-large/Name=Album, Filled=No.svg" alt="album icon">Elevate</span>
-                        <span class="dot"></span>
-                        <span class="adt-info">2011</span> //as aditional info
-                        <span class="dot"></span>
-                        <span class="adt-info">4:59</span>
-                        <span class="dot"></span>
-                        <span class="adt-info">2,659,263</span>
-                        <span class="dot"></span>
-                    </div>
-
-                    <div class="icon-bar">
-                        <button class="icon-btn">
-                            <img src="assets/images/Icons-large/Name=Play, Filled=No.svg" alt="playing">
-                        </button>
-
-
-                        <button class="icon-btn">
-                            <img src="assets/images/Icons-large/Name=Like, Filled=No.svg" alt="like">
-                        </button>
-
-
-                        <button class="icon-btn">
-                            <img src="assets/images/Icons-large/Name=Playlist, Filled=No.svg" alt="playlist">
-                        </button>
-
-
-                        <button class="icon-btn">
-                            <img src="assets/images/Icons-large/Name=Add to Queue, Filled=No.svg" alt="add to queue">
-                        </button>
-
-                        <button class="icon-btn">
-                            <img src="assets/images/Icons-large/Name=Download, Filled=No.svg" alt="download">
-                        </button>
-
-                        <button class="icon-btn">
-                            <img src="assets/images/Icons-large/Name=Share, Filled=No.svg" alt="share">
-                        </button>
-
-                        <button class="icon-btn">
-                            <img src="assets/images/Icons-large/Name=More, Filled=No.svg" alt="more">
-                        </button>
-
-                    </div>
-
-                    <div class="genres">
-                        <span class="genre">Funk</span>
-                        <span class="genre">Electronic music</span>
-                        <span class="genre">Disco</span>
-                        <span class="genre">Soft Rock</span>
-                        <span class="genre">Progressive pop</span>
-                    </div>
-
-
-                    <div class="artist-list">
-                        <div class="sub-artist">
-                            <img class="img-subartist" src="assets/images/imgs/james.png" alt="james maslow" >
-                            <div class="names">
-                                <p class="name">James Maslow</p>
-                                <p class="role">Main artist</p>
-                            </div>
-                        </div>
-
-                        <div class="sub-artist">
-                            <img class="img-subartist" src="assets/images/imgs/carlos.png" alt="carlos" >
-                            <div class="names">
-                                <p class="name">Carlos PenaVega</p>
-                                <p class="role">Main artist, Lyricist</p>
-                            </div>
-                        </div>
-
-                        <div class="sub-artist">
-                            <img class="img-subartist" src="assets/images/imgs/kendal.png" alt="Kendal" >
-                            <div class="names">
-                                <p class="name">Kendal Schmidt</p>
-                                <p class="role">Main artist, Composer</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </header>
+            
         </div>
-    </div>
-     </main>
     
+    </main>
+</body>
+</html>
