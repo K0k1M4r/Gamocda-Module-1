@@ -11,17 +11,25 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 1rem 2.5rem 1.2rem 2.5rem;
-
-
-    &__add-btn {
-    color: $font-fg-secondary;
-    font-size: 4rem;
     
-    &:hover {
+
+    @include desktop { 
+        
+        margin: 1rem 2.5rem 1.2rem 2.5rem;
+        
+        &__add-btn {
+        color: $font-fg-secondary;
+        font-size: 4rem;
+        
+        &:hover {
         @include sidebar-item;
         @include flex-center;
         width: 4rem;
+     }
+
+    
+    
+    
     }
 }
 
@@ -38,8 +46,6 @@
 
     &__btn {
     @include primary-text;
-    // color: $font-fg-secondary;
-    font-size: 1.4rem;
     border-radius: 0.5rem;
     cursor: pointer;
 
@@ -52,13 +58,23 @@
 }
 }
 
-#tracklist { padding: 0 2.5rem; }
+#tracklist { 
+    display: none;
+
+    @include desktop {
+        display: contents;
+        padding: 0 2.5rem; 
+}
+}
 
 .tracklist__table {
+
+    @include desktop {
         width: 100%;
         border-collapse: collapse;
         color: $header-text-color;
         font-size: 1.4rem;
+    }
     }
 
     .tracklist__head tr {
@@ -115,22 +131,21 @@
 
         .title {
             display: block;
-            color: $header-text-color;
-            font-size: 1.6rem;
+            @include primary-title;
         }
 
         .artist {
             display: block;
-            color: $font-fg-secondary;
-            font-size: 1.4rem;
             margin-top: 0.4rem;
+            @include primary-text;
+            
         }
      }
     
     
-    .track-album { color: $font-fg-secondary; }
+    .track-album { @include primary-text; }
 
-    .track-duration { color: $font-fg-secondary; }
+    .track-duration { @include primary-text; }
 
     .track-like button {
         background: none;
