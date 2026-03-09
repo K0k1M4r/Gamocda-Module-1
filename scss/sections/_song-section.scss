@@ -3,13 +3,10 @@
 @use '../abstract/responsive' as *;
 @use '../abstract/_variables.scss' as *;
 
-// Simple Variables
-$bg-dark: #121212;
+
 $text-main: #ffffff;
 $text-secondary: #b3b3b3;
-$accent-green: #1db954;
 $mobile-breakpoint: 768px;
-
 
 .hide-desktop {
   display: block;
@@ -20,52 +17,51 @@ $mobile-breakpoint: 768px;
   @media (max-width: ($mobile-breakpoint - 1px)) { display: none !important; }
 }
 
-    
+
 main {
   color: $font-fg-primary;
   font-family: $text-main;
 }
 
 .now-playing {
+  align-items: center;
   min-height: 100vh;
-  @include flex-center;
-  padding: 1.5rem;    
+  padding: 1.5rem;
   position: relative;
-
-  .blured-backgound {
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: linear-gradient(135deg, #3B414D, #272B33);
-    z-index: -1;
-  } 
+  background: pink;
 }
 
 .songpage-wrapper {
   width: 100%;
   max-width: 100rem;
+
+
+  @media (max-width: ($mobile-breakpoint - 1px)) {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
 }
+
 
 .mobile-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 2rem 2rem;
+  padding: 0.5rem 0 1.5rem;
+  position: relative;
 
-  .icon-btn {
-    transform: translate(-50%);
-    img {
-      width: 4rem;  
-      height: auto;
-      display: block; 
-    }
+  .icon-btn img {
+    width: 4rem;
+    height: auto;
+    display: block;
   }
-
 
   .mobile-header-center {
     display: flex;
     align-items: center;
     gap: 0.2rem;
-    
+
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -73,11 +69,24 @@ main {
 
   .mobile-header-text {
     font-size: 1.2rem;
+    color: $font-fg-primary;
   }
 
   .album-icon {
-    width: 2.4rem; 
+    width: 2.4rem;
     height: 2.4rem;
+  }
+}
+
+
+.track-header {
+  display: flex;
+  // align-items: flex-start;
+  gap: 4rem;
+  padding-top: 2rem;
+
+  @media (max-width: ($mobile-breakpoint - 1px)) {
+    width:100%
   }
 }
 
@@ -86,26 +95,15 @@ main {
     width: 100%;
     max-width: 50rem;
     border-radius: 0.5rem;
+    display: block;
   }
 }
+
+
 
 .track-info {
   width: 100%;
   padding: 1rem 0.3rem;
-
-  .title-row {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .text-group {
-    display: flex;
-    flex-direction: row;
-    gap: 0.2rem;
-    align-items: center; 
-    justify-content: space-between;
-    width: 100%;
-  }
 
   .track-title {
     font-size: 2rem;
@@ -114,42 +112,22 @@ main {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    line-height: 1.2;
+    margin-bottom: 0.4rem;
   }
 
   .track-title2 {
-    font-size: 1.5rem; 
+    font-size: 1.5rem;
     font-weight: 500;
-    color: $text-secondary; 
-    width: 100%;  
-  }
-
-  .icons {
-    display: flex;
-    gap: 0.6rem;
-
-    .icon-btn {
-      cursor: pointer;
-      transition: transform 0.2s ease;
-
-      &:hover {
-        transform: scale(1.1);
-      }
-
-      img {
-        display: block;
-        width: 4rem;
-        height: 4rem;
-      }
-    }
+    color: $text-secondary;
   }
 }
 
-
-// Desktop Info Row (Artist, Album, Stats)
 .info-row {
   display: flex;
   align-items: center;
-  gap: 10px;
+  flex-wrap: wrap;
+  gap: 6px;
   color: $font-fg-secondary;
   margin: 15px 0;
   font-size: 0.9rem;
@@ -166,17 +144,18 @@ main {
   }
 }
 
-// Icon Bar (Play, Like, etc)
+// Desktop icon action bar
 .icon-bar {
   list-style: none;
   display: flex;
   gap: 20px;
   margin: 25px 0;
+  padding: 0;
 
   .icon-btn img {
     width: 24px;
     opacity: 0.7;
-    transition: 0.2s;
+    transition: opacity 0.2s;
     &:hover { opacity: 1; }
   }
 }
@@ -188,6 +167,7 @@ main {
   flex-wrap: wrap;
   gap: 10px;
   margin-top: 20px;
+  padding: 0;
 
   .genre {
     background: rgba(255,255,255,0.1);
@@ -195,13 +175,15 @@ main {
     border-radius: 20px;
     font-size: 0.8rem;
     border: 1px solid rgba(255,255,255,0.2);
+    color: $text-main;
   }
 }
 
-// Artist Credits
+// Artist credits
 .artist-list {
   list-style: none;
   margin-top: 30px;
+  padding: 0;
 
   .sub-artist {
     display: flex;
@@ -216,73 +198,161 @@ main {
       object-fit: cover;
     }
 
-    .name { font-weight: 600; font-size: 0.95rem; }
-    .role { color: $text-secondary; font-size: 0.8rem; }
+    .name  { font-weight: 600; font-size: 0.95rem; color: $text-main; }
+    .role  { color: $text-secondary; font-size: 0.8rem; }
   }
 }
 
-// Mobile Progress & Controls
 
-.player__progress {
-  display: flex;
-  align-items: column;
-  gap: 10px;
-  margin-top: 40px;
-  font-size: 0.75rem;
-  color: $text-secondary;
+.mobile-track-info {
+  padding: 1.6rem 0 0.4rem;
 
-  .track-time {
-    flex-shrink: 0; // Prevents timestamps from squishing
+  .mobile-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .mobile-titles {
+    margin-top: 0.8rem;
+    flex: 1;
+  }
+
+  .track-title {
+    color: linear-gradient(90deg, #DBDBDB 0%, #7A7F88 50%, #30353E 100%);
     font-size: 2rem;
-    min-width: 35px;
+    font-weight: 700;
+    color: $font-fg-primary;
+    margin-bottom: 1rem;
   }
 
-  .progress-bar {
-    flex-grow: 1;
-    height: 4px;
-    background: rgba(255,255,255,0.2);
-    border-radius: 2px;
-    cursor: pointer;
-
-    &__fill {
-      width: 60%; // Hardcoded for visual
-      height: 100%;
-      background: #fff;
-      border-radius: 2px;
-    }
-
-    .time-info {
-      width: 100%;
-      font-size: 0.75rem;
-      color: rgba(255, 255, 255, 0.6); // Or your $text-secondary variable
-    }
-
+  .track-title2 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: $font-fg-secondary;
   }
 
+  .mobile-actions {
+    display: flex;
+    gap: 0.8rem;
+    flex-shrink: 0;
+
+    .icon-btn img {
+      transform: translateY(-8%);
+      width: 4rem;
+      height: 4rem;
+      display: block;
+    }
+  }
+}
+
+
+.songpage_player__progress {
+  margin-top: 2rem;
+  @include flex-center;
+
+  @media (max-width: ($mobile-breakpoint - 1px)) {
+    margin-top: 1.6rem;
+  }
+}
+
+.songpage_progress-bar {
+  flex: 1;
+  height: 0.3rem;
+  background: rgba(255,255,255,0.2);
+  border-radius: 10rem;
+  position: relative;
+  cursor: pointer;
+
+  &__fill {
+    height: 100%;
+    width: 35%;
+    background: #E0E0E0;
+    border-radius: 10rem;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      right: -0.55rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 1.1rem;
+      height: 1.1rem;
+      background: white;
+      border-radius: 50%;
+      // Always visible on mobile, hover on desktop
+      @media (max-width: ($mobile-breakpoint - 1px)) { opacity: 1; }
+      @media (min-width: $mobile-breakpoint) {
+        opacity: 0;
+        transition: opacity 0.2s;
+      }
+    }
+  }
+
+  &:hover &__fill::after {
+    @media (min-width: $mobile-breakpoint) { opacity: 1; }
+  }
+}
+
+
+
+.songpage_track-time {
+  font-size: 0.85rem;
+  color: $text-secondary;
 }
 
 
 .player-row {
-  @include flex-between;
-  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2.4rem;
 
   .player__btn {
     cursor: pointer;
-    
-    img { width: 5rem; }
+    background: none;
+    border: none;
+    padding: 0;
 
-    &:nth-child(3) img { 
-      width: 5rem;
+    img {
+      width: 4rem;
+      height: 4rem;
+      display: block;
+    }
+
+    // Center pause/play button gets white circle background
+    &--play img {
+      width: 5.6rem;
+      height: 5.6rem;
       background: white;
       border-radius: 50%;
-      color:black;
+      padding: 0.6rem;
+      // invert so the icon shows dark on white
+      filter: invert(1);
     }
   }
 }
 
-// Basic Button Reset
+
+.mobile-bottom-bar {
+  @include flex-between;
+  margin-top: 2.4rem;
+  padding-bottom: 1rem;
+
+  .icon-btn img {
+    width: 5rem;
+    height: 5rem;
+    display: block;
+  }
+}
+
 .icon-btn {
   background: none;
   border: none;
   cursor: pointer;
+  padding: 0;
 }
+
+

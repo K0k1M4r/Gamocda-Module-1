@@ -23,14 +23,15 @@ button {
     cursor: pointer;
     background-color: $control-bar-bg;
     border-radius: 1rem;
-    position: sticky;
+    // I changed the position to "fixed" to make it fixed to the bottom of the screen when scrolling
+    position: fixed;
     z-index: 100;
     bottom: 9.5rem;
     // I changed the witdh to 97vw 
-    width: 97vw;
+    width: 94vw;
     justify-self: center;
     // centers the item
-    margin: 0 5px;
+    margin: 0 auto;
     
     @include desktop {
         position: sticky;
@@ -49,6 +50,10 @@ button {
     border-radius: 10rem;
     position: relative;
     cursor: pointer;
+    
+    
+    @include desktop { width: 20vw; min-width: 10rem; }
+    
 
     &--mobile {
         position: absolute;
@@ -145,7 +150,9 @@ button {
     margin-right: auto;
 
     @include desktop {
-        flex: 1;
+        // flex: 1;
+        margin-right: 0;
+        justify-content: center;
     }
 }
 
@@ -248,4 +255,3 @@ button {
     @include desktop { display: none; }
 
 }
-
