@@ -1,3 +1,87 @@
 @use '../abstract/mixins' as *;
 @use '../universal components/components' as *;
 @use '../abstract/responsive' as *;
+@use '../abstract/variables' as *;
+
+// Artist Header
+.artist-image-header {
+    @include desktop {
+        @include artist-image-header();
+    }
+}
+
+
+
+// Artist navbar
+.artist-navbar {
+    @include desktop {
+        display: flex;
+        align-items: center;
+        padding: 0 4.6rem;
+        height: 6rem;
+    }
+    
+}
+
+
+
+// Artist Navbar List
+.artist-navbar-list {
+
+        @include desktop {
+            display: flex;
+            column-gap: 5rem;
+            padding-right: 5rem;
+
+
+            a {
+            text-decoration: none;
+            }
+
+            button {
+            padding: 2rem 0.6rem;
+            color: $font-fg-secondary;
+            font-size: 1.4rem;
+            font-weight: 500;
+            }
+
+            li:nth-child(1) {
+            border-bottom: 0.2rem solid #1ED760;
+            }
+        }
+        
+    }
+    
+    
+.most-played-list {
+    @include desktop {
+        display: flex;
+        flex-direction: column;
+        row-gap: 0.5rem;
+        width: 100%;
+         h2 {
+           color: $font-fg-primary;
+           font-size: 20px;
+           font-weight: 700; 
+           padding-top: 4rem;
+           padding-bottom: 2rem;
+        }
+    }
+   
+}   
+
+.artist-homepage-main-content {
+     @include desktop {
+        display: flex
+     }
+}
+
+// Most Played Song
+.most-played-song {
+    @include desktop {
+        @include most-played-song ();
+    }
+}
+
+
+
