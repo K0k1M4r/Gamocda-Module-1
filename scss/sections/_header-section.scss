@@ -118,10 +118,18 @@
 }
 
 .search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 1.5rem;
+
+    
+
     @include desktop {
         position: relative;
         display: flex;
         align-items: center; 
+        margin: 0;
         
         input {
             padding: 1.2rem 1.2rem 1.2rem 5rem; 

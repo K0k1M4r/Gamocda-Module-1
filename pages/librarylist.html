@@ -78,11 +78,6 @@
                     <li><button><img src="../assets/images/Icons-small/me-mobile.svg" alt="">Me</button></li>
                 </ul>
                 
-                
-                
-                
-                
-
             </div>
      </header>
 
@@ -172,6 +167,16 @@
 
     <!-- Main section -->
      <main>
+        <!-- Mobile search input START -->
+        <section class="top-row--mobile">
+            <div class="search-container-mobile">
+                <img src="../assets/images/Icons-large/magnifing glass.svg" alt="">
+                <input type="search" placeholder="Search library">
+            </div>
+            <button class="add-btn--mobile">+</button>
+        </section>
+        
+        <!-- Mobile search input END -->
 
     <div class="sort-bar">
         <button class="sort-bar__add-btn">+</button>
@@ -184,9 +189,16 @@
             <button class="sort-bar__btn"><img src="../assets/images/Icons-large/Name=Sort, Filled=No.svg" alt="Sort button">Recent</button>
                 
             <button class="sort-bar__btn"><img src="../assets/images/Icons-large/Name=Filter, Filled=No.svg" alt="Filter button">Filter: All</button>
-            <button class="sort-bar__btn"><img src="" alt=""></button>
         </div>
     </div>
+
+<!-- Mobile options START -->
+    <div class="options__mobile">
+            <button class="options__mobile-btn"><img src="../assets/images/Icons-large/Name=Filter, Filled=No.svg" alt="Filter button">Group</button>
+            
+            <button class="options__mobile-btn">Recent<img src="../assets/images/Icons-large/Name=List, Filled=No.svg" alt="View as list"></button>            
+    </div>
+<!-- Mobile options END -->
 
     <section id="tracklist">
         <table class="tracklist__table">
@@ -299,8 +311,36 @@
                 </tr>
             </tbody>
         </table>
+
+        
     </section>
 
+    <!-- Mobile categories START -->
+    <section id="librarylist-mobile">
+    <ul class="category-list">
+        <li class="category-list--item">
+            <span>Playlists</span>
+            <span><img src="../assets/images/Icons-large/Name=Right, Filled=No.svg" class="sidebar-arrow" class="sidebar arrow"></span>
+        </li>
+        <li class="category-list--item">
+            <span>Playlists by Spotify</span>
+            <span><img src="../assets/images/Icons-large/Name=Right, Filled=No.svg" class="sidebar-arrow" class="sidebar arrow"></span>
+        </li>
+        <li class="category-list--item">
+            <span>Albums</span>
+            <span><img src="../assets/images/Icons-large/Name=Right, Filled=No.svg" class="sidebar-arrow" class="sidebar arrow"></span>
+        </li>
+        <li class="category-list--item">
+            <span>Folders</span>
+            <span><img src="../assets/images/Icons-large/Name=Right, Filled=No.svg" class="sidebar-arrow" class="sidebar arrow"></span>
+        </li>
+        <li class="category-list--item">
+            <span>Artists</span>
+            <span><img src="../assets/images/Icons-large/Name=Right, Filled=No.svg" class="sidebar-arrow" class="sidebar arrow"></span>
+        </li>
+    </ul>
+</section>
+    <!-- Mobile categories END -->
 
 
 

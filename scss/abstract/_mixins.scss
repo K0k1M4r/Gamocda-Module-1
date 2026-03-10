@@ -261,7 +261,7 @@
 }
 
 
-// ── Most commonly description text (track description etc.)  ───────────────────────────────────────────────────
+// ── Most commonly used description text (track description etc.)  ───────────────────────────────────────────────────
 @mixin primary-text (  )
         {
     color: $font-fg-secondary;
@@ -282,4 +282,14 @@
     font-weight: $primary-title-font-weight;
     line-height: $primary-line-height;
     letter-spacing: $primary-letter-spacing;
+    }
+
+
+    // ── Mobile title (category names, like "Lybrary")
+    @mixin mobile-title-primary {
+        font-size: $mobile-title-size;
+        font-weight: $mobile-title-weight;
+        line-height: $primary-line-height;
+        letter-spacing: $primary-letter-spacing;
+        color: $header-text-color;
     }
