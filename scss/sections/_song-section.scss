@@ -4,52 +4,58 @@
 @use '../abstract/_variables.scss' as *;
 
 
-$text-main: #ffffff;
-$text-secondary: #b3b3b3;
-$mobile-breakpoint: 768px;
-
 .hide-desktop {
   display: block;
-  @media (min-width: $mobile-breakpoint) { display: none !important; }
 }
 
 .hide-mobile {
-  @media (max-width: ($mobile-breakpoint - 1px)) { display: none !important; }
+  display: none !important;
 }
-
-
 main {
-  color: $font-fg-primary;
-  font-family: $text-main;
+  color: #ffffff;
+  font-family: #ffffff; 
 }
 
 .now-playing {
   align-items: center;
   min-height: 100vh;
-  padding: 1.5rem;
+  padding: 1.8rem;
   position: relative;
-  background: pink;
-}
+  overflow: hidden; 
+  z-index: 1;
+  background-color: #000;
 
-.songpage-wrapper {
-  width: 100%;
-  max-width: 100rem;
-
-
-  @media (max-width: ($mobile-breakpoint - 1px)) {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
+  .blured-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    
+    background-image: url('../assets/images/imgs/btr.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    filter: blur(60px) brightness(0.3) saturate(2);
+    
+    transform: scale(1.2); 
   }
 }
 
 
-.mobile-header {
+.songpage-wrapper {
+  width: 100%;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.5rem 0 1.5rem;
+  flex-direction: column;
+}
+
+
+.mobile-header {
+  @include flex-between;
   position: relative;
+  margin-top:5rem;
 
   .icon-btn img {
     width: 4rem;
@@ -61,7 +67,6 @@ main {
     display: flex;
     align-items: center;
     gap: 0.2rem;
-
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -69,7 +74,7 @@ main {
 
   .mobile-header-text {
     font-size: 1.2rem;
-    color: $font-fg-primary;
+    color: #ffffff;
   }
 
   .album-icon {
@@ -78,37 +83,28 @@ main {
   }
 }
 
-
 .track-header {
   display: flex;
-  // align-items: flex-start;
-  gap: 4rem;
+  flex-direction: column; // Mobile layout
+  gap: 2rem;
   padding-top: 2rem;
-
-  @media (max-width: ($mobile-breakpoint - 1px)) {
-    width:100%
-  }
 }
 
-.album-pic {
-  img {
-    width: 100%;
-    max-width: 50rem;
-    border-radius: 0.5rem;
-    display: block;
-  }
+.album-pic img {
+  width: 100%;
+  max-width: 70rem;
+  border-radius: 0.5rem;
+  display: block;
 }
 
-
-
-.track-info {
+.mobile-track-info {
   width: 100%;
   padding: 1rem 0.3rem;
 
   .track-title {
     font-size: 2rem;
     font-weight: 700;
-    background: linear-gradient(90deg, #DBDBDB, #30353E);
+    background: linear-gradient(90deg, #30353E, #DBDBDB);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -117,25 +113,27 @@ main {
   }
 
   .track-title2 {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: 500;
-    color: $text-secondary;
+    color: $font-fg-secondary;
   }
+
 }
+
 
 .info-row {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 6px;
-  color: $font-fg-secondary;
-  margin: 15px 0;
+  color: #b3b3b3;
+  margin: 2rem 0;
   font-size: 0.9rem;
+  gap:0.5rem;
+  font-size: 1.4rem;
 
   .info-icon {
-    width: 16px;
+    width: 2.4rem;
     vertical-align: middle;
-    margin-right: 4px;
   }
 
   .dot::before {
@@ -144,46 +142,39 @@ main {
   }
 }
 
-// Desktop icon action bar
 .icon-bar {
   list-style: none;
   display: flex;
-  gap: 20px;
-  margin: 25px 0;
+  gap: 1.4rem;
+  margin: 2rem 0;
   padding: 0;
 
   .icon-btn img {
-    width: 24px;
+    width: 4rem;
     opacity: 0.7;
     transition: opacity 0.2s;
-    &:hover { opacity: 1; }
   }
 }
 
-// Genres
 .genres {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 20px;
-  padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
 
   .genre {
     background: rgba(255,255,255,0.1);
-    padding: 6px 15px;
+    padding: 1rem 2rem;
     border-radius: 20px;
-    font-size: 0.8rem;
+    font-size: 1.4rem;
     border: 1px solid rgba(255,255,255,0.2);
-    color: $text-main;
+    color: $font-fg-secondary
   }
 }
 
-// Artist credits
 .artist-list {
   list-style: none;
-  margin-top: 30px;
-  padding: 0;
+  margin-top: 3rem;
 
   .sub-artist {
     display: flex;
@@ -192,17 +183,24 @@ main {
     margin-bottom: 15px;
 
     .img-subartist {
-      width: 45px;
-      height: 45px;
+      width: 6.1rem;
+      height: 6.1rem;
       border-radius: 50%;
       object-fit: cover;
     }
 
-    .name  { font-weight: 600; font-size: 0.95rem; color: $text-main; }
-    .role  { color: $text-secondary; font-size: 0.8rem; }
+    .name {
+      font-weight: 600;
+      font-size: 1.6rem;
+      color:$font-fg-primary;
+    }
+
+    .role {
+      color:$font-fg-secondary;
+      font-size: 1.6rem; 
+    }
   }
 }
-
 
 .mobile-track-info {
   padding: 1.6rem 0 0.4rem;
@@ -220,17 +218,16 @@ main {
   }
 
   .track-title {
-    color: linear-gradient(90deg, #DBDBDB 0%, #7A7F88 50%, #30353E 100%);
+    color: #ffffff;
     font-size: 2rem;
     font-weight: 700;
-    color: $font-fg-primary;
     margin-bottom: 1rem;
   }
 
   .track-title2 {
     font-size: 1.8rem;
     font-weight: 500;
-    color: $font-fg-secondary;
+    color: #b3b3b3;
   }
 
   .mobile-actions {
@@ -247,14 +244,10 @@ main {
   }
 }
 
-
 .songpage_player__progress {
-  margin-top: 2rem;
+  margin-top: 7rem;
   @include flex-center;
-
-  @media (max-width: ($mobile-breakpoint - 1px)) {
-    margin-top: 1.6rem;
-  }
+  gap:1rem;
 }
 
 .songpage_progress-bar {
@@ -282,35 +275,23 @@ main {
       height: 1.1rem;
       background: white;
       border-radius: 50%;
-      // Always visible on mobile, hover on desktop
-      @media (max-width: ($mobile-breakpoint - 1px)) { opacity: 1; }
-      @media (min-width: $mobile-breakpoint) {
-        opacity: 0;
-        transition: opacity 0.2s;
-      }
+      opacity: 1; // Always visible on mobile
     }
   }
-
-  &:hover &__fill::after {
-    @media (min-width: $mobile-breakpoint) { opacity: 1; }
-  }
 }
-
-
 
 .songpage_track-time {
-  font-size: 0.85rem;
-  color: $text-secondary;
+  font-size: 1.2rem;
+  color: #b3b3b3;
 }
 
-
-.player-row {
+.songpage_player-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 2.4rem;
+  margin-top: 4rem;
 
-  .player__btn {
+  .songpage_player__btn {
     cursor: pointer;
     background: none;
     border: none;
@@ -322,24 +303,24 @@ main {
       display: block;
     }
 
-    // Center pause/play button gets white circle background
-    &--play img {
-      width: 5.6rem;
-      height: 5.6rem;
+    &:nth-child(3) img {
       background: white;
       border-radius: 50%;
       padding: 0.6rem;
-      // invert so the icon shows dark on white
-      filter: invert(1);
+      display: flex;
+
+      .img{
+        filter: invert(1);
+        width: 5.6rem;
+      height: 5.6rem;
+      }
     }
   }
 }
 
-
 .mobile-bottom-bar {
   @include flex-between;
-  margin-top: 2.4rem;
-  padding-bottom: 1rem;
+  margin-top: 4rem;
 
   .icon-btn img {
     width: 5rem;
@@ -355,4 +336,75 @@ main {
   padding: 0;
 }
 
+.control-bar{
+  display: none !important;
 
+   @media (min-width: 1024px) {
+    display: flex !important;
+  }
+}
+
+// ------Desktop----------------
+@media (min-width: 1024px) {
+  .hide-desktop {
+    display: none !important;
+  }
+
+  .hide-mobile {
+    display: block !important;
+  }
+
+  .songpage-wrapper {
+    flex-direction: row; // Change to desktop layout
+  }
+  
+
+  .track-header {
+    flex-direction: row; // Icons/Info next to album pic
+    gap: 4rem;
+  }
+
+  .track-info .track-title {
+    background: none;
+    -webkit-text-fill-color: initial;
+    color: #ffffff;
+  }
+
+  .songpage_player__progress {
+    margin-top: 2rem;
+  }
+
+  .songpage_progress-bar__fill::after {
+    opacity: 0; // Hide handle until hover on desktop
+    transition: opacity 0.2s;
+  }
+
+  .songpage_progress-bar:hover .songpage_progress-bar__fill::after {
+    opacity: 1;
+  }
+
+  .icon-bar .icon-btn img:hover {
+    opacity: 1;
+  }
+
+  .track-info {
+    width: 100%;
+    margin:1.5rem 4rem;
+
+  .track-title {
+    font-size: 3.6rem;
+    font-weight: 700;
+    color: $font-fg-primary;
+  }
+
+  .track-title2 {
+    display: none;
+  }
+}
+
+.album-pic img {
+    display: block;
+    margin: 1.1rem 3rem;
+}
+
+}

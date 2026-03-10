@@ -8,36 +8,49 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
-    <!-- desktop header -->
-    <header class="header-desctop">
-        <!-- header nav buttons and search input -->
-        <div class="header-nav">
-            <ul>
-                <li class="active">
-                    <button>
-                            <span class="icon">
-                            <img src="./assets/images/Icons-large/house no hover.svg" alt="">
-                        </span>
-                        <span class="item-label">   </span>
-                    </button>
-                </li>
+    <body>
 
-                <li>
-                    <button>
-                        <span class="icon">
-                            <img src="./assets/images/Icons-large/star discover.svg" alt="">
-                        </span>
-                        <span class="item-label">Discover</span>
-                    </button>
-                </li>
-            </ul>
+        <!-- Koki -->
+    <!-- desctop header -->
+
+     <header class="header-desctop">
+
+            
+        
+            
+            <!-- header nav buttons and search input -->
+            
+            <div class="header-nav">
+                <ul>
+                    <li class="active">
+                        <button>
+                            <span class="icon">
+                                <img src="./assets/images/Icons-large/house no hover.svg" alt="">
+                            </span>
+                            <span class="item-label">Home</span>
+                        </button>
+                    </li>
+
+                    <li>
+                        <button>
+                            <span class="icon">
+                                <img src="./assets/images/Icons-large/star discover.svg" alt="">
+                            </span>
+                            <span class="item-label">Discover</span>
+                        </button>
+                    </li>
+                </ul>
                 
-            <div class="search-container">
+                
+            
+                <div class="search-container">
                 <img src="./assets/images/Icons-large/magnifing glass.svg" alt="">
                 <input type="search" placeholder="Search">
                 </div>
+            
             </div>
+
+
 
             <div class="header-action-icons">
                 <ul>
@@ -48,19 +61,22 @@
                     <li><img src="./assets/images/Icons-large/profile icon.svg" alt=""></li>
                 </ul>
             </div>
+        
         </header>
-
+     <!-- nutsa -->
      <!-- sidebar -->
-    <aside class="sidebar">
+     <aside class="sidebar">
         <ul class="sidebar-content">
 
+            <!-- My Library start -->
             <li class="sidebar-items">
                 <button class="sidebar-item">
                     <img src="assets/images/Icons-large/Name=Library, Filled=No.svg" class="icon" alt="albums icon">
                     <span class="item-label">My Library</span>
                 </button>
             </li>
-            
+            <!-- My Library end -->
+
             <li class="sidebar-items">
                 <button class="sidebar-item">
                     <img src="assets/images/Icons-large/Name=Pin, Filled=No.svg" class="icon" alt="pin icon">
@@ -127,8 +143,9 @@
                 </button>
             </li>
         </ul>
-    </aside>
+     </aside>
 
+     
     <main class="now-playing">
         <div class="blured-background"></div>
 
@@ -169,7 +186,6 @@
                             <span class="adt-info">4:59</span>
                             <span class="dot"></span>
                             <span class="adt-info">2,659,263</span>
-                            <span class="dot"></span>
                     </div>
 
                     <ul class="icon-bar">
@@ -240,17 +256,17 @@
             <div class="songpage_player__progress hide-desktop">
                 <time class="songpage_track-time">2:23</time>
                 <div class="songpage_progress-bar">
-                    <div class="progress-bar__fill"></div>
+                    <div class="songpage_progress_bar__fill"></div>
                 </div>
                     <time class="songpage_track-time">-0:45</time>
             </div>
 
-            <div class="player-row hide-desktop">
-                <button class="player__btn"><img src="assets/images/Icons-small/Property 1=Shuffle.svg" alt="shuffle"></button>
-                <button class="player__btn"><img src="assets/images/Icons-small/Property 1=Prev.svg" alt="previous"></button>
-                <button class="player__btn player__btn--play"><img src="assets/images/Icons-small/Property 1=Pause Simple.svg" alt="pause"></button>
-                <button class="player__btn"><img src="assets/images/Icons-small/Property 1=Next.svg" alt="next"></button>
-                <button class="player__btn"><img src="assets/images/Icons-small/Property 1=Loop.svg" alt="loop"></button>
+            <div class="songpage_player-row hide-desktop">
+                <button class="songpage_player__btn"><img src="assets/images/Icons-small/Property 1=Shuffle.svg" alt="shuffle"></button>
+                <button class="songpage_player__btn"><img src="assets/images/Icons-small/Property 1=Prev.svg" alt="previous"></button>
+                <button class="songpage_player__btn player__btn--play"><img src="assets/images/Icons-small/Property 1=Pause Simple.svg" alt="pause"></button>
+                <button class="songpage_player__btn"><img src="assets/images/Icons-small/Property 1=Next.svg" alt="next"></button>
+                <button class="songpage_player__btn"><img src="assets/images/Icons-small/Property 1=Loop.svg" alt="loop"></button>
             </div>
 
            
@@ -264,10 +280,10 @@
 
         </div>
     </main>
-
      
-    <div class="control-bar hide-mobile">
-
+    
+    
+    <div class="control-bar">
         <div class="control-left">
 
             <div class="player">
@@ -318,7 +334,11 @@
         </div>
 
     </div>
-    <!-- </player> -->
 
-</body>
+</div>
+<!-- </player> -->
+
+
+
+    </body>
 </html>
