@@ -882,9 +882,9 @@
 // Most Played Song
 @mixin most-played-song () {
     color: white;
-        display: flex;
-        justify-content: space-between;
-        
+    display: flex;
+    justify-content: space-between;
+    padding-right: 266px;    
         span {
             font-size: 1.4rem;
             color: $font-fg-secondary;
@@ -897,8 +897,8 @@
 
         .album-img-section {
             display: flex;
-        align-items: center;
-        column-gap: 10px;
+            align-items: center;
+            column-gap: 10px;
         img {
             height: 5.1rem;
             border-radius: 0.3rem;
