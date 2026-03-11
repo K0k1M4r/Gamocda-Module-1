@@ -436,7 +436,7 @@
 }
 
 
-// Most commonly used description text (track description etc.)  
+// ── Most commonly description text (track description etc.)  ───────────────────────────────────────────────────
 @mixin primary-text (  )
         {
     color: $font-fg-secondary;
@@ -460,14 +460,6 @@
     }
 
 
-// ── Mobile title (category names, like "Lybrary")
-@mixin mobile-title-primary {
-    font-size: $mobile-title-size;
-    font-weight: $mobile-title-weight;
-    line-height: $primary-line-height;
-    letter-spacing: $primary-letter-spacing;
-    color: $header-text-color;
-}
 
 @mixin mobile-inside-image-card($theme-color: #1E3264) {
         color: #FFFFFF;
@@ -483,9 +475,9 @@
         border-radius: 1rem;
         box-sizing: border-box;
         .card-inside-image-text {
-            grid-area: 1 / 1;
+            grid-area: 1/1;
             line-height: 260%;
-            z-index: 50;
+            z-index: 100;
             h3 {
                 font-weight: 900;
                 font-size: 2rem;
@@ -495,7 +487,8 @@
             grid-area: 1 / 1;
             width: 10.427rem;
             height: 10.427rem;
-            transform:translateY(-0.7rem) translateX(5.2rem);
+            grid-area: 2;
+            transform:translateY(-3.1rem) translateX(6.2rem);
             rotate: 30deg;
             border-radius: 0.5rem;
         }
