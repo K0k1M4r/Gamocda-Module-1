@@ -35,7 +35,7 @@ button {
     left: 50%;
     transform: translateX(-50%);
     @include desktop {
-        position: sticky;
+        // position: sticky;
         padding: 2rem;
         margin: 0;
         width: 97.5%;

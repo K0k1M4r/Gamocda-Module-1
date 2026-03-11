@@ -33,7 +33,7 @@ button {
     // centers the item
     margin: 0 auto;
     left: 50%;
-    transform: translateX(-50%);
+        transform: translateX(-50%);
     @include desktop {
         position: sticky;
         padding: 2rem;
