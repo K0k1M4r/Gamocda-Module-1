@@ -58,10 +58,12 @@ main {
   
   @include desktop {
   overflow-y: auto;
+  min-height: 0;
+    // padding-bottom: 12rem;
   border: 1px solid #202020;
   border-radius: 10px;
   // margin-left: 25px;
-  margin-bottom: 5px;
+  margin-bottom: 9.5rem;
   }
 }
 

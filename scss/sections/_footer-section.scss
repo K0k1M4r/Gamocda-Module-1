@@ -11,7 +11,7 @@ button {
     align-items: center;
 }
 
-// ── Control bar ──────────────────────────────────────────────────
+// Control bar 
 .control-bar {
     
     grid-area: control-bar;
@@ -34,25 +34,26 @@ button {
     margin: 0 auto;
     
     @include desktop {
-        position: sticky;
+        position: fixed;
         padding: 2rem;
         margin: 0;
-        width: 97.5%;
+        width: calc(100% - 30rem);
         bottom: 0;
+        right: 0;
     }
 }
 
-// ── Progress-bar ─────────────────────────────────────────────────
+// Progress-bar 
 .progress-bar {
     flex: 1;
     height: 0.4rem;
-    background: #555;
+    background: $font-fg-secondary;
     border-radius: 10rem;
     position: relative;
     cursor: pointer;
     
     
-    @include desktop { width: 20vw; min-width: 10rem; }
+    @include desktop { width: 15vw; min-width: 5rem; }
     
 
     &--mobile {
@@ -89,7 +90,7 @@ button {
     &:hover &__fill::after { opacity: 1; }
 }
 
-// ── Left side ────────────────────────────────────────────────────
+// Left side 
 .control-left {
     display: flex;
     align-items: center;
@@ -125,7 +126,7 @@ button {
         }
     }
 
-// ── Right side ───────────────────────────────────────────────────
+// Right side 
 .control-right {
     display: flex;
     align-items: center;
@@ -140,9 +141,13 @@ button {
         .global .player__btn { display: flex; }
         .additions { display: flex; gap: 1rem; }
     }
+
+    @include player-md {
+        display: none;
+}
 }
 
-// ── Track info ───────────────────────────────────────────────────
+// Track info 
 .track-meta {
     display: flex;
     align-items: center;
@@ -161,7 +166,7 @@ button {
 
     @include desktop {
         display: block;
-        color: #898989;
+        color: $font-fg-secondary;
         font-size: 1.2rem;
     }
 }
@@ -174,13 +179,13 @@ button {
         font-size: 1.4rem;
         font-weight: 400;
         letter-spacing: 3%;
-        color: #E0E0E0;
+        color: $header-text-color;
         padding-bottom: 2px;
     }
 
     &-singer {
         @extend .track-info-title;
-        color: #898989;
+        color: $font-fg-secondary;
     }
 
     &-album {
@@ -209,13 +214,13 @@ button {
     }
 }
 
-// ── Buttons ──────────────────────────────────────────────────────
+// Buttons 
 .global {
     display: flex;
     margin-right: 0;
 
     @include desktop {
-        border-right: 0.1rem solid #898989;
+        border-right: 0.1rem solid $font-fg-secondary;
         margin-right: 1.5rem;
     }
 }
