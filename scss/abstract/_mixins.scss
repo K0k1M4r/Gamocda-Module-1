@@ -436,7 +436,7 @@
 }
 
 
-// ── Most commonly description text (track description etc.)  ───────────────────────────────────────────────────
+// Most commonly used description text (track description etc.)  
 @mixin primary-text (  )
         {
     color: $font-fg-secondary;
@@ -460,6 +460,14 @@
     }
 
 
+// ── Mobile title (category names, like "Lybrary")
+@mixin mobile-title-primary {
+    font-size: $mobile-title-size;
+    font-weight: $mobile-title-weight;
+    line-height: $primary-line-height;
+    letter-spacing: $primary-letter-spacing;
+    color: $header-text-color;
+}
 
 @mixin mobile-inside-image-card($theme-color: #1E3264) {
         color: #FFFFFF;

@@ -166,182 +166,175 @@
 
 
     <!-- Main section -->
-     <main>
-        <!-- Mobile search input START -->
-        <section class="top-row--mobile">
-            <div class="search-container-mobile">
-                <img src="../assets/images/Icons-large/magnifing glass.svg" alt="">
-                <input type="search" placeholder="Search library">
+    <main class="album__container">
+
+        <section class="album__main">
+            <h1 class="album__title">Random Access Memories</h1>
+
+            <div class="album__info">
+                <img src="../assets/images/Icons-large/Name=Artist, Filled=No.svg" alt="" class="album__artist-icon">
+                <span class="album__artist">Daft Punk</span>
+                <span class="album__year">&middot; 2013 &middot;</span>
+                <span class="album__songs">13 songs &middot;</span>
+                <span class="album__duration">1 hr 42 min</span>
             </div>
-            <button class="add-btn--mobile">+</button>
-        </section>
-        
-        <!-- Mobile search input END -->
 
-    <div class="sort-bar">
-        <button class="sort-bar__add-btn">+</button>
-
-        <div class="sort-bar__options">
-            <div class="sort-bar__view">            
-                <button class="sort-bar__btn sort-bar__btn--active"><img src="../assets/images/Icons-large/Name=List, Filled=No.svg" alt="View as list"></button>
-                <button class="sort-bar__btn"><img src="../assets/images/Icons-large/Name=Grid, Filled=No.svg" alt="View as thumbnails"></button>
+            <div class="album__nav">
+                <ul class="album__player">
+                    <li><button class="album__player-btn"><img src="../assets/images/Icons-large/Name=Play, Filled=No.svg" alt="Play button"></button></li>
+                    <li><button class="album__player-btn"><img src="../assets/images/Icons-large/Name=Shuffle, Filled=No.svg" alt="Shuffle button"></button></li>
+                    <li><button class="album__player-btn"><img src="../assets/images/Icons-large/Name=Add, Filled=No.svg" alt="Add button"></button></li>
+                    <li><button class="album__player-btn"><img src="../assets/images/Icons-large/Name=Add to Queue, Filled=No.svg" alt="Queue button"></button></li>
+                    <li><button class="album__player-btn"><img src="../assets/images/Icons-large/Name=Download, Filled=No.svg" alt="Download button"></button></li>
+                    <li><button class="album__player-btn"><img src="../assets/images/Icons-large/Name=Upload, Filled=No.svg" alt="Upload button"></button></li>
+                    <li><button class="album__player-btn"><img src="../assets/images/Icons-large/Name=More, Filled=No.svg" alt="More button"></button></li>
+                </ul>
+                <button class="album__search-btn"><img src="../assets/images/Icons-large/Name=Search, Filled=No.svg" alt="Search"></button>
             </div>
-            <button class="sort-bar__btn"><img src="../assets/images/Icons-large/Name=Sort, Filled=No.svg" alt="Sort button">Recent</button>
-                
-            <button class="sort-bar__btn"><img src="../assets/images/Icons-large/Name=Filter, Filled=No.svg" alt="Filter button">Filter: All</button>
-        </div>
-    </div>
-
-<!-- Mobile options START -->
-    <div class="options__mobile">
-            <button class="options__mobile-btn"><img src="../assets/images/Icons-large/Name=Filter, Filled=No.svg" alt="Filter button">Group</button>
-            
-            <button class="options__mobile-btn">Recent<img src="../assets/images/Icons-large/Name=List, Filled=No.svg" alt="View as list"></button>            
-    </div>
-<!-- Mobile options END -->
-
-    <section id="tracklist">
-        <table class="tracklist__table">
-            <thead class="tracklist__head">
-                <tr>
-                    <th>#</th>
-                    <th>Title</th>
-                    <th>Album</th>
-                    <th>Duration</th>
-                    <th></th>
-                    <th class="empty-column"></th>
+            <table class="tracklist__table">
+                <thead class="tracklist__head">
+                    <tr>
+                        <th>#</th>
+                        <th>Title</th>
+                        <th>Duration</th>
+                        <th></th>
+                        <th class="empty-column"></th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="track-number">1</td>
+                        <td class="track-title">
+                            <div>
+                                <span class="title">Give Life Back to Music</span>
+                                <span class="artist">Daft Punk</span>
+                            </div>
+                        </td>
+                        <td class="track-duration">4:35</td>
+                        <td class="track-like"><img src="../assets/images/Icons-large/Name=Like, Filled=No.svg" alt="liked"></td>
+                    </tr>
+                    <tr>
+                        <td class="track-number">2</td>
+                        <td class="track-title">
+                            <div>
+                                <span class="title">The Game of Love</span>
+                                <span class="artist">Daft Punk</span>
+                            </div>
+                        </td>
+                        <td class="track-duration">5:22</td>
+                        <td class="track-like"><img src="../assets/images/Icons-large/Name=Like, Filled=No.svg" alt="liked"></td>
+                    </tr>
+                    <tr>
+                        <td class="track-number">3</td>
+                        <td class="track-title">
+                            <div>
+                                <span class="title">Giorgio by Moroder</span>
+                                <span class="artist">Daft Punk</span>
+                            </div>
+                        </td>
+                        <td class="track-duration">9:04</td>
+                        <td class="track-like"><img src="../assets/images/Icons-large/Name=Like, Filled=No.svg" alt="liked"></td>
+                    </tr>
+                    <tr>
+                        <td class="track-number">4</td>
+                        <td class="track-title">
+                            <div>
+                                <span class="title">Within</span>
+                                <span class="artist">Daft Punk</span>
+                            </div>
+                        </td>
+                        <td class="track-duration">3:48</td>
+                        <td class="track-like"><img src="../assets/images/Icons-large/Name=Like, Filled=No.svg" alt="liked"></td>
+                    </tr>
+                    <tr>
+                        <td class="track-number">5</td>
+                        <td class="track-title">
+                            <div>
+                                <span class="title">Instant Crush (feat. Julian Casablancas)</span>
+                                <span class="artist">Daft Punk, Julian Casablancas</span>
+                            </div>
+                        </td>
+                        <td class="track-duration">5:37</td>
+                        <td class="track-like"><img src="../assets/images/Icons-large/Name=Like, Filled=No.svg" alt="liked"></td>
+                    </tr>
+                    <tr>
+                        <td class="track-number">6</td>
+                        <td class="track-title">
+                            <div>
+                                <span class="title">Lose Yourself to Dance (feat. Pharrell Williams)</span>
+                                <span class="artist">Daft Punk, Pharrell Williams</span>
+                            </div>
+                        </td>
+                        <td class="track-duration">5:53</td>
+                        <td class="track-like"><img src="../assets/images/Icons-large/Name=Like, Filled=No.svg" alt="liked"></td>
+                    </tr>
+                    <tr>
+                        <td class="track-number">7</td>
+                        <td class="track-title">
+                            <div>
+                                <span class="title">Touch (feat. Pharrell Williams)</span>
+                                <span class="artist">Daft Punk, Pharrell Williams</span>
+                            </div>
+                        </td>
+                        <td class="track-duration">8:18</td>
+                        <td class="track-like"><img src="../assets/images/Icons-large/Name=Like, Filled=No.svg" alt="liked"></td>
+                    </tr>
+                    <tr>
+                        <td class="track-number">8</td>
+                        <td class="track-title">
+                            <div>
+                                <span class="title">Get Lucky (feat. Pharrell Williams and Nile Rodgers)</span>
+                                <span class="artist">Daft Punk, Pharrell Williams, Nile Rodgers</span>
+                            </div>
+                        </td>
+                        <td class="track-duration">6:09</td>
+                        <td class="track-like"><img src="../assets/images/Icons-large/Name=Like, Filled=No.svg" alt="liked"></td>
+                    </tr>
+                    <tr>
+                        <td class="track-number">9</td>
+                        <td class="track-title">
+                            <div>
+                                <span class="title">Beyond</span>
+                                <span class="artist">Daft Punk</span>
+                            </div>
+                        </td>
+                        <td class="track-duration">4:50</td>
+                        <td class="track-like"><img src="../assets/images/Icons-large/Name=Like, Filled=No.svg" alt="liked"></td>
+                    </tr>
                     
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="track-number">1</td>
-                    <td class="track-title">
-                        <img src="../assets/images/Artists/daft_punk.png" alt="Get Lucky">
-                        <div>
-                            <span class="title">Get Lucky</span>
-                            <span class="artist">Daft Punk</span>
-                        </div>
-                    </td>
-                    <td class="track-album">Random Access Memories</td>
-                    <td class="track-duration">4:35</td>
-                    <td class="track-like"><button aria-label="Like"><img src="../assets/images/Icons-large/Name=LikeGreen, Filled=Yes.svg" alt="liked"></button></td>
-                </tr>
-                
-            </tbody>
+                </tbody>
+            </table>
+        </section>
 
-            <tbody>
-                <tr>
-                    <td class="track-number">2</td>
-                    <td class="track-title">
-                        <img src="../assets/images/Artists/daft_punk.png" alt="Instant Crush">
-                        <div>
-                            <span class="title">Instant Crush</span>
-                            <span class="artist">Daft Punk, Julian Casablancas</span>
-                        </div>
-                    </td>
-                    <td class="track-album">Random Access Memories</td>
-                    <td class="track-duration">5:37</td>
-                    <td class="track-like"><button aria-label="Like"><img src="../assets/images/Icons-large/Name=LikeGreen, Filled=Yes.svg" alt="liked"></button></td>
-                </tr>
-                <tr>
-                    <td class="track-number">3</td>
-                    <td class="track-title">
-                        <img src="../assets/images/Artists/gorillaz.png" alt="On Melancholy Hill">
-                        <div>
-                            <span class="title">On Melancholy Hill</span>
-                            <span class="artist">Gorillaz</span>
-                        </div>
-                    </td>
-                    <td class="track-album">Plastic Beach</td>
-                    <td class="track-duration">3:53</td>
-                    <td class="track-like"><button aria-label="Like"><img src="../assets/images/Icons-large/Name=LikeGreen, Filled=Yes.svg" alt="liked"></button></td>
-                </tr>
-                <tr>
-                    <td class="track-number">4</td>
-                    <td class="track-title">
-                        <img src="../assets/images/Artists/soft_cell.png" alt="Tainted Love">
-                        <div>
-                            <span class="title">Tainted Love</span>
-                            <span class="artist">Soft Cell</span>
-                        </div>
-                    </td>
-                    <td class="track-album">Non-Stop Erotic Cabaret</td>
-                    <td class="track-duration">2:33</td>
-                    <td class="track-like"><button aria-label="Like"><img src="../assets/images/Icons-large/Name=LikeGreen, Filled=Yes.svg" alt="liked"></button></td>
-                </tr>
-                <tr>
-                    <td class="track-number">5</td>
-                    <td class="track-title">
-                        <img src="../assets/images/Artists/daft_punk_2.png" alt="One More Time">
-                        <div>
-                            <span class="title">One More Time</span>
-                            <span class="artist">Daft Punk</span>
-                        </div>
-                    </td>
-                    <td class="track-album">Discovery</td>
-                    <td class="track-duration">5:20</td>
-                    <td class="track-like"><button aria-label="Like"><img src="../assets/images/Icons-large/Name=LikeGreen, Filled=Yes.svg" alt="liked"></button></td>
-                </tr>
-                <tr>
-                    <td class="track-number">6</td>
-                    <td class="track-title">
-                        <img src="../assets/images/Artists/mgmt.png" alt="Electric Feel">
-                        <div>
-                            <span class="title">Electric Feel</span>
-                            <span class="artist">MGMT</span>
-                        </div>
-                    </td>
-                    <td class="track-album">Oracular Spectacular</td>
-                    <td class="track-duration">3:49</td>
-                    <td class="track-like"><button aria-label="Like"><img src="../assets/images/Icons-large/Name=LikeGreen, Filled=Yes.svg" alt="liked"></button></td>
-                </tr>
-                <tr>
-                    <td class="track-number">7</td>
-                    <td class="track-title">
-                        <img src="../assets/images/Artists/daft_punk.png" alt="Give Life Back to Music">
-                        <div>
-                            <span class="title">Give Life Back to Music</span>
-                            <span class="artist">Daft Punk</span>
-                        </div>
-                    </td>
-                    <td class="track-album">Random Access Memories</td>
-                    <td class="track-duration">4:35</td>
-                    <td class="track-like"><button aria-label="Like"><img src="../assets/images/Icons-large/Name=LikeGreen, Filled=Yes.svg" alt="liked"></button></td>
-                </tr>
-            </tbody>
-        </table>
+        <section class="album__right-section">
+        
+            <img src="../assets/images/Artists/daft_punk.png" alt="Daft punk cover" class="album__cover">
+            <ul class="album__tags">
+                <li class="album__tag">Funk</li>
+                <li class="album__tag">Electronic music</li>
+                <li class="album__tag">Disco</li>
+                <li class="album__tag">Soft Rock</li>
+                <li class="album__tag">Progressive pop</li>
+            </ul>
+
+                <div class="album__last-artists">
+                    <div class="album__last-artist">
+                        <img src="../assets/images/Artists/daft_punk_3.png" alt="Daft Punk cover" class="album__last-artist-cover">
+                        <span class="album__last-artist-name">Daft Punk</span>
+                    </div>
+                    <div class="album__last-artist">
+                        <img src="../assets/images/Artists/pharel_williams.png" alt="Pharel Williams cover" class="album__last-artist-cover">
+                        <span class="album__last-artist-name">Pharel Williams</span>
+                    </div>
+                    <div class="album__last-artist">
+                        <img src="../assets/images/Artists/nile_rodgers.png" alt="Nile Rodgers cover" class="album__last-artist-cover">
+                        <span class="album__last-artist-name">Nile Rodgers</span>
+                    </div>
+                </div>
 
         
-    </section>
-
-    <!-- Mobile categories START -->
-    <section id="librarylist-mobile">
-    <ul class="category-list">
-        <li class="category-list--item">
-            <span>Playlists</span>
-            <span><img src="../assets/images/Icons-large/Name=Right, Filled=No.svg" class="sidebar-arrow" class="sidebar arrow"></span>
-        </li>
-        <li class="category-list--item">
-            <span>Playlists by Spotify</span>
-            <span><img src="../assets/images/Icons-large/Name=Right, Filled=No.svg" class="sidebar-arrow" class="sidebar arrow"></span>
-        </li>
-        <li class="category-list--item">
-            <span>Albums</span>
-            <span><img src="../assets/images/Icons-large/Name=Right, Filled=No.svg" class="sidebar-arrow" class="sidebar arrow"></span>
-        </li>
-        <li class="category-list--item">
-            <span>Folders</span>
-            <span><img src="../assets/images/Icons-large/Name=Right, Filled=No.svg" class="sidebar-arrow" class="sidebar arrow"></span>
-        </li>
-        <li class="category-list--item">
-            <span>Artists</span>
-            <span><img src="../assets/images/Icons-large/Name=Right, Filled=No.svg" class="sidebar-arrow" class="sidebar arrow"></span>
-        </li>
-    </ul>
-</section>
-    <!-- Mobile categories END -->
-
+        </section>
 
 
      </main>
