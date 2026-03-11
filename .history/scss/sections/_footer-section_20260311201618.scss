@@ -41,8 +41,8 @@ button {
         width: calc(100% - 30rem);
         bottom: 0;
         right: 0;
-        left: 0;
-        transform: translateX(0);
+        left: 50%;
+        transform: translateX(-50%);
     }
 }
 

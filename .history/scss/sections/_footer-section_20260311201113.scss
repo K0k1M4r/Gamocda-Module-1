@@ -32,8 +32,7 @@ button {
     justify-self: center;
     // centers the item
     margin: 0 auto;
-    left: 50%;
-    transform: translateX(-50%);
+    
     @include desktop {
         position: fixed;
         padding: 2rem;
@@ -41,8 +40,6 @@ button {
         width: calc(100% - 30rem);
         bottom: 0;
         right: 0;
-        left: 0;
-        transform: translateX(0);
     }
 }
 
