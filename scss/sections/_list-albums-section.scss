@@ -1,3 +1,33 @@
 @use '../abstract/mixins' as *;
 @use '../universal components/components' as *;
 @use '../abstract/responsive' as *;
+@use '../abstract/variables' as *;
+
+
+
+
+.album-artist-whole-container {
+    display: flex;
+    border: 1px solid red;
+    align-items: center;
+    .card-album {
+        margin-right: 1.8rem;
+    }
+    .album-text-discription {
+        row-gap: 10px;
+        height: 100%;
+        border: 1px solid red;
+    }
+    h2 {
+        font-size: 2rem;
+        color: $font-fg-primary;
+    }
+    p {
+        color: $font-fg-secondary;
+        font-size: 1.4rem;
+    }
+
+    .dotted-sentances {
+        display: flex;
+    }
+}
