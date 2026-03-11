@@ -13,13 +13,8 @@
         <!-- Koki -->
     <!-- desctop header -->
 
-     <header class="header-desctop">
-
-            
-        
-            
+    <header class="header-desctop">
             <!-- header nav buttons and search input -->
-            
             <div class="header-nav">
                 <ul>
                     <li class="active">
@@ -62,20 +57,20 @@
                 </ul>
             </div>
         
-        </header>
+    </header>
+
+
      <!-- nutsa -->
      <!-- sidebar -->
      <aside class="sidebar">
         <ul class="sidebar-content">
 
-            <!-- My Library start -->
             <li class="sidebar-items">
                 <button class="sidebar-item">
                     <img src="assets/images/Icons-large/Name=Library, Filled=No.svg" class="icon" alt="albums icon">
                     <span class="item-label">My Library</span>
                 </button>
             </li>
-            <!-- My Library end -->
 
             <li class="sidebar-items">
                 <button class="sidebar-item">
@@ -84,7 +79,6 @@
                 </button>
                 <img src="assets/images/Icons-large/Name=Right, Filled=No.svg" class="sidebar-arrow" class="sidebar arrow">
             </li>
-
 
             <li class="sidebar-items">
                 <button class="sidebar-item">
@@ -145,13 +139,14 @@
         </ul>
      </aside>
 
-     
+    <!-- main container for song, now-playing parts -->
     <main class="now-playing">
         <div class="blured-background"></div>
 
-        <div class="songpage-wrapper">
+        <div class="songpage-wrapper" id="main-player-container">
 
             <header class="mobile-header hide-desktop">
+
                 <button class="icon-btn">
                     <img src="assets/images/Icons-small/Property 1=Down.svg" alt="down icon">
                 </button>
@@ -162,6 +157,22 @@
                 </div>
 
             </header>
+
+            <!-- mobile-only lyrics -->
+            <div class="mobile-lyrics-inline hide-desktop">
+                <div class="mobile-lyrics-block">
+                    Like the legend of the phoenix, huh
+                    All ends with beginnings
+                    What keeps the planet spinning, ah
+                    The force from the beginning, hm, look
+                    We've come too far
+                    To give up who we are
+                    So let's raise the bar
+                    And our cups to the stars
+                    She's up all night 'til the sun
+                    I'm up all night to get some
+                </div>
+            </div>
 
 
             <div class="track-header">
@@ -231,7 +242,6 @@
                             </div>
                         </li>
                     </ul>
-
                 </div>
             </div>
 
@@ -273,7 +283,7 @@
             <div class="mobile-bottom-bar hide-desktop">
                 <button class="icon-btn"><img src="assets/images/Icons-small/Property 1=Variant16.svg" alt="idk whats that"></button>
                 <button class="icon-btn"><img src="assets/images/Icons-small/Property 1=Share.svg" alt="share"></button>
-                <button class="icon-btn"><img src="assets/images/Icons-large/Name=Lyrics, Filled=No.svg" alt="playlist"></button>
+                <button class="icon-btn" id="mobile-lyrics-btn"><img src="assets/images/Icons-large/Name=Lyrics, Filled=No.svg" alt="playlist"></button>
                 <button class="icon-btn"><img src="assets/images/Icons-small/Property 1=Queue.svg" alt="queue"></button>
                 <button class="icon-btn"><img src="assets/images/Icons-small/Property 1=More.svg" alt="more"></button>
             </div>
@@ -297,7 +307,8 @@
                         <button class="icon-btn"><img src="assets/images/Icons-large/Name=Notes, Filled=No.svg" alt="notes"></button>
                         <button class="icon-btn"><img src="assets/images/Icons-large/Name=Font, Filled=No.svg" alt="font"></button>
                     </aside>
-
+                    
+                    <!--lyrics part for desktop only -->
                     <article class="lyrics-text">
                         <div class="lyrics-block">
                             Like the legend of the phoenix, huh
@@ -343,7 +354,7 @@
                         </div>
                     </article>
                 </div>
-            </div>
+            </div> 
         </section>
     </main>
      
@@ -401,10 +412,23 @@
 
     </div>
 
-</div>
-<!-- </player> -->
+    <!--  when you are on mobile and click on lyrics icon, this js code gives you lyrics, instead of album img and info, please try-->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+        const lyricsBtn = document.getElementById('mobile-lyrics-btn');
 
+        lyricsBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            document.body.classList.toggle('show-lyrics');
+            console.log("Lyrics view toggled!");
+        });
 
+        // Clicking lyrics section itself should NOT close it
+        document.querySelector('.lyrics-section').addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+        });
+    </script>
 
     </body>
 </html>
