@@ -19,11 +19,10 @@ main {
 .now-playing {
   align-items: center;
   min-height: 100vh;
-  padding: 1.8rem;
   position: relative;
-  overflow: hidden; 
   z-index: 1;
   background-color: #000;
+  padding: 1.8rem;
 
   .blured-background {
     position: absolute;
@@ -49,6 +48,7 @@ main {
   width: 100%;
   display: flex;
   flex-direction: column;
+  // padding: 1.8rem;
 }
 
 
@@ -163,7 +163,6 @@ main {
     gap: 1rem;
 
   .genre {
-    background: rgba(255,255,255,0.1);
     padding: 1rem 2rem;
     border-radius: 20px;
     font-size: 1.4rem;
@@ -346,65 +345,143 @@ main {
 
 // ------Desktop----------------
 @media (min-width: 1024px) {
-  .hide-desktop {
-    display: none !important;
+    .hide-desktop {
+      display: none !important;
+    }
+
+    .hide-mobile {
+      display: block !important;
+    }
+
+    .now-playing{
+      padding: 0;
+    }
+
+    .songpage-wrapper {
+      flex-direction: row;
+      padding: 3rem; 
+    }
+    
+
+    .track-header {
+      flex-direction: row; // Icons/Info next to album pic
+      gap: 4rem;
+    }
+
+    .track-info .track-title {
+      background: none;
+      -webkit-text-fill-color: initial;
+      color: #ffffff;
+    }
+
+    .songpage_player__progress {
+      margin-top: 2rem;
+    }
+
+    .songpage_progress-bar__fill::after {
+      opacity: 0; // Hide handle until hover on desktop
+      transition: opacity 0.2s;
+    }
+
+    .songpage_progress-bar:hover .songpage_progress-bar__fill::after {
+      opacity: 1;
+    }
+
+    .icon-bar .icon-btn img:hover {
+      opacity: 1;
+    }
+
+    .track-info {
+      width: 100%;
+      margin:1.5rem 4rem;
+
+    .track-title {
+      font-size: 3.6rem;
+      font-weight: 700;
+      color: $font-fg-primary;
+    }
+
+    .track-title2 {
+      display: none;
+    }
   }
 
-  .hide-mobile {
-    display: block !important;
+  .album-pic img {
+      display: block;
+      margin: 1.1rem 3rem;
   }
 
-  .songpage-wrapper {
-    flex-direction: row; // Change to desktop layout
+  .lyrics-section{
+      margin-left: 1.8rem;
+      margin: 1.5rem 0 3rem 0;
+      .lyrics-tabs{
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 1.8rem;
+        margin-bottom: 2rem;
+        ul {
+          margin-left: 5rem;
+          display: flex;
+          gap: 5rem;
+
+          li {
+            font-size: 1.4rem;
+            color: $font-fg-secondary;
+            cursor: pointer;
+
+            &.active {
+              color: $font-fg-primary;
+              position: relative;
+
+              &::after { //bottom green line
+                content: '';
+                position: absolute;
+                bottom: -2rem;
+                left: 0;
+                width: 100%;
+                height: 3px;
+                background: green;
+              }
+            }
+          }
+      }
+    }
   }
+
+  .lyrics-content-wrapper {
+      display: flex;
+      gap: 20rem;
+  }
+
+  .lyrics-sidebar {
+      margin-left: 6.5rem;
+      
+      .icon-btn {
+        margin: 2rem 0;
+        img { width: 4rem; }
+      }
+  }
+
+  .lyrics-text {
+    width: 100%;
+    .lyrics-block {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: $font-fg-primary;
+      white-space: pre-line; 
+      max-height: 70vh;
+      overflow-y: auto;
+
+      &::-webkit-scrollbar {
+      display: none;
+    }
+      scrollbar-width: none;
+      -ms-overflow-style: none;
   
 
-  .track-header {
-    flex-direction: row; // Icons/Info next to album pic
-    gap: 4rem;
-  }
 
-  .track-info .track-title {
-    background: none;
-    -webkit-text-fill-color: initial;
-    color: #ffffff;
-  }
-
-  .songpage_player__progress {
-    margin-top: 2rem;
-  }
-
-  .songpage_progress-bar__fill::after {
-    opacity: 0; // Hide handle until hover on desktop
-    transition: opacity 0.2s;
-  }
-
-  .songpage_progress-bar:hover .songpage_progress-bar__fill::after {
-    opacity: 1;
-  }
-
-  .icon-bar .icon-btn img:hover {
-    opacity: 1;
-  }
-
-  .track-info {
-    width: 100%;
-    margin:1.5rem 4rem;
-
-  .track-title {
-    font-size: 3.6rem;
-    font-weight: 700;
-    color: $font-fg-primary;
-  }
-
-  .track-title2 {
-    display: none;
+    }
   }
 }
 
-.album-pic img {
-    display: block;
-    margin: 1.1rem 3rem;
-}
+    
 
-}
