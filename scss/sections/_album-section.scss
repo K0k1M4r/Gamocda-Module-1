@@ -1,3 +1,41 @@
 @use '../abstract/mixins' as *;
 @use '../universal components/components' as *;
 @use '../abstract/responsive' as *;
+@use '../abstract/variables' as *;
+
+.album__container {
+    padding: 2.2rem 5rem 2.2rem 3.7rem;
+}
+
+.album__main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.album__title {
+    @include primary-title;
+    font-weight: 700;
+    font-size: 3.6rem;
+}
+
+.album__info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    @include primary-text;
+}
+
+.album__artist {
+    color: $header-text-color;
+}
+
+.album__nav {
+    @include flex-between;
+}
+
+.album__player {
+    display: flex;
+    align-items: center;
+}
