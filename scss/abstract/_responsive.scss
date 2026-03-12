@@ -4,6 +4,13 @@
   }
 }
 
+// @mixin tablet {
+//   @media (min-width: ???px) {
+//     @content;
+//   }
+// }
+
+
 @mixin player-md {
   @media (max-width: 1600px) {
     @content;
@@ -21,5 +28,3 @@
     @content;
   }
 }
-
-// to commit

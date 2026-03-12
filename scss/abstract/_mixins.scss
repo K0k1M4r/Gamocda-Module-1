@@ -2,12 +2,17 @@
 @use '../abstract/variables' as *; 
 @use '../abstract/responsive' as *;
 
+
+
+// Flex Content - Center
 @mixin flex-center{
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+
+// Flex Content - Space Between
 @mixin flex-between{
     display: flex;
     justify-content: space-between;
@@ -15,6 +20,7 @@
 }
 
 
+// Header Button
 @mixin header-button() {
     display: flex;
     align-items: center;
@@ -27,7 +33,7 @@
 }
 
 
-
+// Audio and Music Filter
 @mixin music-audio-filter-button() {
         color: $header-text-color;
         background-color: #202020;
@@ -449,16 +455,15 @@
 
 
 
-// Most commonly used title (track names etc.)  
+
 @mixin primary-title ()
 {
-color: $header-text-color;
-font-size: $primary-title-font-size;
-font-weight: $primary-title-font-weight;
-line-height: $primary-line-height;
-letter-spacing: $primary-letter-spacing;
+    color: $header-text-color;
+    font-size: $primary-title-font-size;
+    font-weight: $primary-title-font-weight;
+    line-height: $primary-line-height;
+    letter-spacing: $primary-letter-spacing;
 }
-
 
 // ── Mobile title (category names, like "Lybrary")
 @mixin mobile-title-primary {
@@ -469,6 +474,7 @@ letter-spacing: $primary-letter-spacing;
     color: $header-text-color;
 }
 
+// Mobile cards inside image 
 @mixin mobile-inside-image-card($theme-color: #1E3264) {
         color: #FFFFFF;
         height: 10rem;
@@ -481,24 +487,27 @@ letter-spacing: $primary-letter-spacing;
         padding-left: 2rem;
         overflow: hidden;
         border-radius: 1rem;
+        box-sizing: border-box;
         .card-inside-image-text {
+            grid-area: 1 / 1;
             line-height: 260%;
+            z-index: 50;
             h3 {
                 font-weight: 900;
                 font-size: 2rem;
             }
         }
         img {
+            grid-area: 1 / 1;
             width: 10.427rem;
             height: 10.427rem;
-            grid-area: 2;
-            transform:translateY(-3.1rem) translateX(6.2rem);
+            transform:translateY(-0.7rem) translateX(5.2rem);
             rotate: 30deg;
             border-radius: 0.5rem;
         }
 }
 
-
+// desctop cards inside image
 @mixin inside-image-card($theme-color: #1E3264) {
     color: #FFFFFF;
     height: 17rem;
@@ -531,7 +540,7 @@ letter-spacing: $primary-letter-spacing;
 
 
 
-
+// Cards with pins --- tripple layered
 @mixin search-card-pin-tripplelayer() {
     display: flex;
     flex-direction: column;
@@ -625,7 +634,7 @@ letter-spacing: $primary-letter-spacing;
 }
 
 
-
+// Cards with pins --- single layered
 @mixin search-card-pin () {
     display: flex;
     flex-direction: column;
@@ -695,6 +704,9 @@ letter-spacing: $primary-letter-spacing;
     }
 }
 
+
+
+// Cards with pins --- double layered
 @mixin search-card-pin-doublelayer($theme-color: #353535) {
     display: flex;
     flex-direction: column;
@@ -774,3 +786,168 @@ letter-spacing: $primary-letter-spacing;
     }
 }
 
+
+
+// Artist Header 
+@mixin artist-image-header() {
+        display: grid;
+        grid-template: 1fr / 1fr;
+        max-width: 100%;
+        max-height: 42.6rem;
+        overflow-y: hidden;
+        img, 
+        .gradient{
+            grid-area: 1 / 1;
+            width: 100%;
+            height: 42.6rem;
+        }
+
+        img {
+            width: 100%;
+            height: 42.6rem;
+            object-fit: cover;
+            border-top-left-radius: 1rem;
+            border-top-right-radius: 1rem;
+            grid: 1/1;
+        }
+
+        .gradient {
+                background: linear-gradient(180deg, rgba(7, 7, 7, 0) 0%, rgba(7, 7, 7, 0.8) 99.62%);
+                z-index: 1;
+            }
+
+
+
+
+
+            .artist-header-text {
+        
+            display: flex;
+            flex-direction: column;
+            row-gap: 2rem;
+            color: $font-fg-primary;
+            h1 {
+                font-size: 5rem;
+                font-weight: 900;
+            }
+            p {
+                font-size: 1.4rem;
+                font-weight: 500;
+            }
+                  
+            }  
+
+
+
+
+
+
+
+
+            .artist-header-content {
+            display: flex;
+            justify-content: space-between;
+            align-self: end;
+            grid-area: 1/1;
+            padding: 3.3rem 3.6rem;
+            z-index: 1000;
+
+            .artist-header-icons {
+                display: flex;
+                align-items: center;
+                column-gap: 1.4rem;
+                transform: translateY(20px);
+            .play-button {
+                height: 4.0411rem;
+            }
+            .header-follow {
+                background-color: #89898940;
+                border-radius: 4.4rem;
+                height: 3.9rem;
+                width: 8.2rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: $font-fg-primary;
+                font-weight: 400;
+                font-size: 1.4rem;
+            }
+            .add-to-list {
+                height: 2.3rem;
+            }
+            .cplus-list {
+                height: 2.3573rem;
+            }
+            .header-tripple-dots {
+                height: 2.3573rem;
+            }
+           }   
+        
+            
+        }  
+
+    
+}
+
+
+// Most Played Song
+@mixin most-played-song () {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 266px;    
+        span {
+            font-size: 1.4rem;
+            color: $font-fg-secondary;
+        }
+
+
+
+
+
+
+        .album-img-section {
+            display: flex;
+            align-items: center;
+            column-gap: 10px;
+        img {
+            height: 5.1rem;
+            border-radius: 0.3rem;
+        }
+        
+        p {
+            padding: 0 3rem;
+        }
+
+        p, h3 {
+            font-size: 1.6rem;
+            font-weight: 500;
+        }
+
+        p, span {
+            color: $font-fg-secondary;
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            height: 100%;
+        }
+        }
+
+
+
+
+
+
+        .song-duration {
+            display: flex;
+            align-items: center;
+            column-gap: 5.5rem;
+            img {
+            height: 2.0205rem;
+            width: 2.3573rem;
+            }
+        }
+}
