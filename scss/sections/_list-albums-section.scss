@@ -12,10 +12,14 @@
     align-items: center;
     .card-album {
         margin-right: 1.8rem;
+
     }
     .album-text-discription {
         row-gap: 10px;
         height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-self: stretch;
         border: 1px solid red;
     }
     h2 {
