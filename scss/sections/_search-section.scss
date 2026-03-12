@@ -91,7 +91,7 @@
         display: flex;
         margin-bottom: 3rem;
         column-gap: 1.1rem;
-        overflow-x: auto; 
+        overflow-x: none; 
         .search-card-x-doublelayer-container:nth-child(1) {
             .doublelayer-x-card-text-header {
                 justify-content: center;
@@ -139,6 +139,7 @@
         flex-wrap: wrap;
         column-gap: 1.1rem;
         row-gap: 2rem;
+        overflow-x: unset;
     }
 }
 
