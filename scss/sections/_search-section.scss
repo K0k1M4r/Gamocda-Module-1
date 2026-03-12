@@ -9,6 +9,16 @@
 }
 
 
+.sortbar-section {
+     @include desktop {
+        border: 1px solid red;
+        display: flex;
+        margin-bottom: 30px
+     }
+}
+
+
+
 .search-card-x-doublelayer-container {
     @include mobile-search-card-x-doublelayer;
     @include desktop {
