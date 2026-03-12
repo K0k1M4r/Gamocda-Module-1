@@ -1,3 +1,18 @@
 @use '../abstract/mixins' as *;
 @use '../universal components/components' as *;
 @use '../abstract/responsive' as *;
+@use '../abstract/variables' as *;
+
+
+.daft-punk-album-grid {
+    @include desktop {
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: 4rem;
+        padding-left: 1.5rem;
+        column-gap: 1.1rem;
+        row-gap: 2rem;
+
+
+    }
+}
