@@ -47,7 +47,7 @@ body {
       "sidebar main"
       "sidebar control-bar";
       grid-template-columns: $sidebar-w 1fr;
-      grid-template-rows: $header-h 1fr $control-bar-bg;
+      grid-template-rows: $header-h 1fr 10px;
       height: 100vh;
       overflow: hidden;
     }

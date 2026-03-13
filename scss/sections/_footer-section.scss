@@ -32,17 +32,17 @@ button {
     justify-self: center;
     // centers the item
     margin: 0 auto;
-    left: 50%;
-    transform: translateX(-50%);
+    // left: 50%;
+    // transform: translateX(-50%);
     @include desktop {
         position: fixed;
-        padding: 2rem;
+        padding: 1.2rem;
         margin: 0;
-        width: calc(100% - 30rem);
+        width: calc(100% - 28.4rem);
         bottom: 0;
         right: 0;
-        left: 0;
-        transform: translateX(0);
+        // left: 0;
+        // transform: translateX(0);
     }
 }
 
@@ -145,9 +145,9 @@ button {
         .additions { display: flex; gap: 1rem; }
     }
 
-    @include player-md {
-        display: none;
-}
+//     @include player-md {
+//         display: none;
+// }
 }
 
 // Track info 
@@ -193,7 +193,7 @@ button {
 
     &-album {
         @extend .track-info-singer;
-        display: none;
+        // display: none;
 
         @include desktop { display: block; }
     }
