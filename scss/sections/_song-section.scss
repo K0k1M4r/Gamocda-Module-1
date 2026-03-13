@@ -309,9 +309,9 @@
 }
 
 .control-bar {
-  display: flex; // Show it by default on your regular pages
+  display: flex;
 
-  // Only hide it on mobile if we are on the Songpage
+  
   .is-songpage & {
     @media (max-width: 1023px) {
       display: none !important;
