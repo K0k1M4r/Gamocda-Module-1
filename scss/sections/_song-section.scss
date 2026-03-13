@@ -308,14 +308,16 @@
   padding: 0;
 }
 
-.control-bar{
-  display: none !important;
+.control-bar {
+  display: flex; // Show it by default on your regular pages
 
-   @media (min-width: 1024px) {
-    display: flex !important;
+  // Only hide it on mobile if we are on the Songpage
+  .is-songpage & {
+    @media (max-width: 1023px) {
+      display: none !important;
+    }
   }
 }
-
 
 
 .lyrics-section {
